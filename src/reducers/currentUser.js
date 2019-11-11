@@ -8,3 +8,10 @@ export default (state = null, action) => {
         return state
     }
   }
+
+/* Redux dev tool:
+user(pin):
+currentUser(pin):null */
+
+
+// needs to match action.type 
