@@ -14,7 +14,15 @@ const initialState = {
     }
   }
 
-/* redux:
+/*
+
+const initialState = {
+    username: "alan",
+    password: "password"
+  }
+
+ redux console:  
+
 loginForm:
-username(pin):""
-password(pin):"" */
+username(pin):"alan"
+password(pin):"password" */
