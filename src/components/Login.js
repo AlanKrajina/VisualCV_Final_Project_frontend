@@ -6,13 +6,13 @@ import { login } from "../actions/currentUser.js"
 
 
 
-const Login = ({ username, password, updateLoginForm}) => {
+const Login = ({ loginFormData, updateLoginForm}) => {
 
     const handleInputChange = event => {
         const { name, value } = event.target
         const updatedFormInfo = {
-          name,
-          value
+            ...loginFormData,
+              [name]: value
         }
         updateLoginForm(updatedFormInfo)
       }
@@ -20,8 +20,8 @@ const Login = ({ username, password, updateLoginForm}) => {
 
     return (
     <form onSubmit={undefined}>
-      <input placeholder="username" value={username} name="username" type="text" onChange={handleInputChange} />
-      <input placeholder="password" value={password} name="password" type="text" onChange={handleInputChange} />
+      <input placeholder="username" value={loginFormData.username} name="username" type="text" onChange={handleInputChange} />
+      <input placeholder="password" value={loginFormData.password} name="password" type="text" onChange={handleInputChange} />
       <input type="submit" value="Log In"/>
     </form>
     )
@@ -35,9 +35,10 @@ const Login = ({ username, password, updateLoginForm}) => {
 
 const mapStateToProps = state => { // taking state from REDUX thats ALREADY in the store
     return {
-      username: state.loginForm.username,
-      password: state.loginForm.password
-    }
+   //   username: state.loginForm.username,
+   //   password: state.loginForm.password
+   loginFormData: state.loginForm
+}
   }
 
 export default connect(mapStateToProps, { updateLoginForm })(Login)
