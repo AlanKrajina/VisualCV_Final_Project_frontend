@@ -4,18 +4,20 @@ import { updateLoginForm } from "../actions/loginForm.js"
 import { login } from "../actions/currentUser.js"
 
 
-const handleInputChange = event => {
-    const { name, value } = event.target
-    const updatedFormInfo = {
-      name,
-      value
-    }
-    updateLoginForm(updatedFormInfo)
-  }
-
 
 
 const Login = ({ username, password, updateLoginForm}) => {
+
+    const handleInputChange = event => {
+        const { name, value } = event.target
+        const updatedFormInfo = {
+          name,
+          value
+        }
+        updateLoginForm(updatedFormInfo)
+      }
+
+
     return (
     <form onSubmit={undefined}>
       <input placeholder="username" value={username} name="username" type="text" onChange={handleInputChange} />
@@ -38,7 +40,7 @@ const mapStateToProps = state => { // taking state from REDUX thats ALREADY in t
     }
   }
 
-export default connect(mapStateToProps, {updateLoginForm: updateLoginForm})(Login)
+export default connect(mapStateToProps, { updateLoginForm })(Login)
 // connect to redux
 // second argument -> imported action
 
