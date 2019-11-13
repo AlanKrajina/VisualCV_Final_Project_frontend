@@ -25,3 +25,9 @@
   display: flex;
   flex-direction: column;
 }
+
+.MainContainer {
+  position: fixed; /* or absolute */
+  top: 10%;
+  left: 50%;
+}
