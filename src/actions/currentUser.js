@@ -104,3 +104,25 @@ export const getCurrentUser = () => {
   /* now after typing username and password THERE is NO alert(response.error) (no one logged in)
   meaning user loged in
   currentUser set (redux tools) */
+
+
+// LOGOUT
+
+  export const clearCurrentUser = () => { // created action.type
+    return {
+      type: "CLEAR_CURRENT_USER"
+    }
+  }
+
+  export const logout = () => {
+    return dispatch => {
+      dispatch(clearCurrentUser())  // dispatched action.type to return NULL from reducer   (above)
+      return fetch('http://localhost:3001/api/v1/logout', {   //  delete "/api/v1/logout", to: "api/v1/sessions#destroy"
+        credentials: "include",
+        method: "DELETE"
+      })
+    }
+  }
+
+
+

@@ -11,12 +11,13 @@ const Login = ({ loginFormData, updateLoginForm, login}) => {
 
 
     const handleInputChange = event => {
-        const { name, value } = event.target // dinamically grabs name and value
+        const { name, value } = event.target // dinamically grabs name and value (onChange)
         const updatedFormInfo = {
             ...loginFormData,
               [name]: value
         }
-        updateLoginForm(updatedFormInfo) // sends current state
+        updateLoginForm(updatedFormInfo) // sends current state(updatedFormInfo) to update
+        // actions/loginForm.js"
       }
 
 
