@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './App.css';
 import { connect } from 'react-redux'
-import { getCurrentUser } from "./actions/currentUser.js"
+import { getCurrentUser } from "./actions/currentUser.js" // user from API
 import NavBar from './components/NavBar.js'
 import MainContainer from './components/MainContainer';
 

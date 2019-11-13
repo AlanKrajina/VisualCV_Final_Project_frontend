@@ -10,3 +10,6 @@ const MainContainer = () => {
 }
 
 export default MainContainer
+
+
+// ovdje mogu slat dalje prema presentational komponentama
