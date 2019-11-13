@@ -6,8 +6,8 @@ import Login from './Login.js'
 
 const NavBar = ({ currentUser }) => {
   return (
-    <div>
-     { currentUser ? `Welcome ${currentUser.attributes.username}` : ""}
+    <div className="nav">
+     { currentUser ? <p>Welcome {currentUser.attributes.username}</p> : ""}
      { currentUser ? <Logout/> : <Login/> }
     </div>
   )
