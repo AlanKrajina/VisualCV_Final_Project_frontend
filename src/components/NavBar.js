@@ -13,11 +13,7 @@ const NavBar = ({ currentUser }) => {
   )
 }
 
-// I an do this because I know the incoming argument is an object, state, coming from redux
-// and I know it has a property called currentUser
-// state = { ...,
-//   currentUser: {...}
-// }
+
 
 const mapStateToProps = ({ currentUser }) => {
   return {

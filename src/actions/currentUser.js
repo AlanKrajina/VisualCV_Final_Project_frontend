@@ -1,3 +1,5 @@
+import { resetLoginForm } from "./loginForm.js"
+
 // synchronous action creators
 // returns plain JS object
 
@@ -7,6 +9,7 @@ export const setCurrentUser = user => {
       user
     }
   }
+
 
 // asynchronous action creators
 // returns FUNCTION that returns FETCH with dispatch from redux
@@ -32,7 +35,7 @@ export const login = (credentials) => {
           } else {
             dispatch(setCurrentUser(response.data)) // dispatch function
             // setCurrentUser -> ACTION creator
-         //   history.push('/')
+            dispatch(resetLoginForm())
           }
         })
         .catch(console.log)
@@ -59,21 +62,6 @@ currentUser:
         content(pin):"text text text text text text "
         video_link(pin):"https://www.youtube.com/"
         github(pin):"https://github.com/"
-
-    abouts:
-        content(pin):"about text about text about text about text"
-    
-    experiences:
-        company(pin):"Apple"
-        content(pin):"helping end users"
-        position(pin):"Tech supp"
-
-    educations:
-        school(pin):"Flatiron School"
-        location(pin):"online program"
-        content(pin):"curriculum info"
-        certification_name(pin):"React course"
-        certification_content(pin):"react curriculum"
 .
 .
 . */
@@ -113,6 +101,10 @@ export const getCurrentUser = () => {
       type: "CLEAR_CURRENT_USER"
     }
   }
+
+
+
+
 
   export const logout = () => {
     return dispatch => {
