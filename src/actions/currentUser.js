@@ -1,4 +1,5 @@
 import { resetLoginForm } from "./loginForm.js"
+import { resetSignupForm } from "./signupForm.js"
 
 // synchronous action creators
 // returns plain JS object
@@ -9,6 +10,34 @@ export const setCurrentUser = user => {
       user
     }
   }
+
+// SIGNUP
+
+export const signup = (credentials) => { // credentials = {username: "AlanKrajina", password: "123123"}
+  return dispatch => {
+    
+    return fetch("http://localhost:3001/api/v1/signup", {  //console error failed to load
+      credentials: "include", //added from rails
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(credentials) 
+    })
+    .then(r => r.json())
+    .then(response => {
+      if (response.error) { 
+        alert(response.error)
+      } else {
+        dispatch(setCurrentUser(response.data)) // dispatch function
+        dispatch(resetSignupForm()) // clears on signup (redux signupForm)
+      }
+    })
+    .catch(console.log)
+}
+}
+
+
 
 
 // asynchronous action creators
@@ -92,6 +121,7 @@ export const getCurrentUser = () => {
   /* now after typing username and password THERE is NO alert(response.error) (no one logged in)
   meaning user loged in
   currentUser set (redux tools) */
+
 
 
 // LOGOUT

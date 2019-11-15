@@ -7,29 +7,18 @@ import { signup } from "../actions/currentUser.js"
 const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
 
   const handleUserInfoInputChange = event => {
-    const { name, value } = event.target // updating name and value
+    const { name, value } = event.target // updating username and password
     const updatedFormInfo = {
-      ...signupFormData,
+      ...signupFormData,                 
       [name]: value
     }
     updateSignupForm(updatedFormInfo)
   }
 
-  const handleHomeTownInfoInputChange = event => {
-    const { name, value } = event.target
-    const updatedFormInfo = {
-      ...signupFormData,
-      hometown: {
-        ...signupFormData.hometown,
-        [name]: value
-      }
-    }
-    updateSignupForm(updatedFormInfo)
-  }
 
   const handleSubmit = event => {
     event.preventDefault()
-    signup(signupFormData, history)
+    signup(signupFormData, history)   // imported action from currentUser
   }
 
   return (
@@ -43,7 +32,7 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
 
 const mapStateToProps = state => {
   return {
-    signupFormData: state.signupForm
+    signupFormData: state.signupForm          // getting data from state
   }
 }
 

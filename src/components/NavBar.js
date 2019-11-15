@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'  // connect grabs curretUser with mapStateToProps
 import Logout from './Logout.js'
 import Login from './Login.js'
+import Signup from './Signup'
 
 
 const NavBar = ({ currentUser }) => {
@@ -9,9 +10,8 @@ const NavBar = ({ currentUser }) => {
     <div className="nav">
      { currentUser ? <p>Welcome {currentUser.attributes.username}</p> : ""}
 
-    <button> Login </button>
-    OR
-    <button> Signup </button>
+     { currentUser ? <Logout/> : <Login/> }
+     <Signup/>
 
     </div>
   )

@@ -1,4 +1,5 @@
-export const updateSignupForm = formData => {
+export const updateSignupForm = formData => { // formData being sent to reducer
+    //debugger
     return {
       type: "UPDATE_SIGNUP_FORM",
       formData
