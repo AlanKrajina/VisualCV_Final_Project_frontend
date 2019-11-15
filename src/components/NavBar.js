@@ -8,11 +8,16 @@ const NavBar = ({ currentUser }) => {
   return (
     <div className="nav">
      { currentUser ? <p>Welcome {currentUser.attributes.username}</p> : ""}
-     { currentUser ? <Logout/> : <Login/> }
+
+    <button> Login </button>
+    OR
+    <button> Signup </button>
+
     </div>
   )
 }
 
+    // { currentUser ? <Logout/> : <Login/> }
 
 
 const mapStateToProps = ({ currentUser }) => {

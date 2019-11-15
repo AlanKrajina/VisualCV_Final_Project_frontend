@@ -9,7 +9,7 @@ const Logout = ({ logout, history }) => {
   return (
     <form onSubmit={(event) => {
         event.preventDefault()
-        logout() // onSubmit this function sends action.type from actions "clearCurrentUser" to reducer "currentUser" and returns NULL
+        logout() // onSubmit this function dispatches action.type from actions "clearCurrentUser" to reducer "currentUser" and returns NULL
       }
     }>
       <input type="submit" value="Log Out"/>
@@ -18,3 +18,6 @@ const Logout = ({ logout, history }) => {
 }
 
 export default connect(null, { logout } )(Logout)
+// { logout }  -> instead of dispatchToProps
+// imported action from "../actions/currentUser.js"
+// automatically dispatched and now we can use it

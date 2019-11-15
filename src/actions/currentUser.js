@@ -17,7 +17,7 @@ export const setCurrentUser = user => {
 
 export const login = (credentials) => {
     /* console.log(credentials)
-    {username: "asd", password: "aasd"} */
+    {username: "Alan", password: "password"} */
 
     return dispatch => {
         return fetch("http://localhost:3001/api/v1/login", {
@@ -35,7 +35,7 @@ export const login = (credentials) => {
           } else {
             dispatch(setCurrentUser(response.data)) // dispatch function
             // setCurrentUser -> ACTION creator
-            dispatch(resetLoginForm())
+            dispatch(resetLoginForm()) // clears on login (redux loginForm)
           }
         })
         .catch(console.log)
@@ -101,10 +101,6 @@ export const getCurrentUser = () => {
       type: "CLEAR_CURRENT_USER"
     }
   }
-
-
-
-
 
   export const logout = () => {
     return dispatch => {
