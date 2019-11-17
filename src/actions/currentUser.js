@@ -13,7 +13,7 @@ export const setCurrentUser = user => {
 
 // SIGNUP
 
-export const signup = (credentials) => { // credentials = {username: "AlanKrajina", password: "123123"}
+export const signup = (credentials, history) => { // credentials = {username: "AlanKrajina", password: "123123"}
   return dispatch => {
     
     return fetch("http://localhost:3001/api/v1/signup", {  //console error failed to load
@@ -31,6 +31,7 @@ export const signup = (credentials) => { // credentials = {username: "AlanKrajin
       } else {
         dispatch(setCurrentUser(response.data)) // dispatch function
         dispatch(resetSignupForm()) // clears on signup (redux signupForm)
+        history.push('/')
       }
     })
     .catch(console.log)
@@ -44,7 +45,7 @@ export const signup = (credentials) => { // credentials = {username: "AlanKrajin
 // returns FUNCTION that returns FETCH with dispatch from redux
 // login route rails sessions contr
 
-export const login = (credentials) => {
+export const login = (credentials, history) => {
     /* console.log(credentials)
     {username: "Alan", password: "password"} */
 
@@ -65,6 +66,7 @@ export const login = (credentials) => {
             dispatch(setCurrentUser(response.data)) // dispatch function
             // setCurrentUser -> ACTION creator
             dispatch(resetLoginForm()) // clears on login (redux loginForm)
+            history.push('/')             // receiving history object to return to initial url
           }
         })
         .catch(console.log)

@@ -6,7 +6,7 @@ import { login } from "../actions/currentUser.js"
 
 
 
-const Login = ({ loginFormData, updateLoginForm, login}) => {
+const Login = ({ loginFormData, updateLoginForm, login , history}) => {
 
 
 
@@ -24,8 +24,9 @@ const Login = ({ loginFormData, updateLoginForm, login}) => {
 
     const handleSubmit = event => {
         event.preventDefault()
-        login(loginFormData) //loggin from curentUser action
+        login(loginFormData, history) //loggin from curentUser action
         // fetches form data and returns JSON
+        // history passes object
     }
     
 

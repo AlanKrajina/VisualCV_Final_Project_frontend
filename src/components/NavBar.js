@@ -3,27 +3,27 @@ import { connect } from 'react-redux'  // connect grabs curretUser with mapState
 import Logout from './Logout.js'
 import Login from './Login.js'
 import Signup from './Signup'
+// shows if user is loged in
 
-
-const NavBar = ({ currentUser }) => {
+const NavBar = ({ currentUser, loggedIn }) => {
   return (
     <div className="nav">
-     { currentUser ? <p>Welcome {currentUser.attributes.username}</p> : ""}
-
-     { currentUser ? <Logout/> : <Login/> }
-     <Signup/>
+     { loggedIn ? <><p id="loggedin">Logged in as {currentUser.attributes.username}</p><Logout/></> : null}
 
     </div>
   )
 }
 
+    // { currentUser ? null : <Signup/>   }
+
     // { currentUser ? <Logout/> : <Login/> }
 
 
-const mapStateToProps = ({ currentUser }) => {
-  return {
-    currentUser
-  }
-}
+    const mapStateToProps = ({ currentUser }) => {
+      return {
+        currentUser,
+        loggedIn: !!currentUser
+      }
+    }
 
 export default connect(mapStateToProps)(NavBar)
