@@ -3,14 +3,20 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 const MyBlogs = ({ currentUser, loggedIn  }) => {
-    return (
-      <div className="nav">
 
-       { loggedIn ? <><p>{currentUser.attributes.blogs.map(element => element.attributes.title)}</p></> : null}
-  
-      </div>
-    )
-  }
+  return (
+    loggedIn ?
+    <div className="nav">
+
+        {currentUser.attributes.blogs.map((element, index) => 
+          <div>
+           <p key={index}><Link to={`/blogs/${index}`}>{element.attributes.title}</Link></p>
+        </div>
+        )} </div> : <p>no blogs</p>
+
+  )
+}
+
 
 
 

@@ -9,10 +9,13 @@ import Login from './components/Login.js'
 import Logout from './components/Logout.js'
 import Signup from './components/Signup.js'
 import { Route, Switch, withRouter } from 'react-router-dom' // installed and imported dependencies
-import Project from './components/projects/Project.js'
 
 import MyProjects from './components/projects/MyProjects.js'
+import Project from './components/projects/Project.js'
+
 import MyBlogs from './components/blogs/MyBlogs.js'
+import Blog from './components/blogs/Blog.js'
+
 import MyExperiences from './components/experiences/MyExperiences.js'
 import MyEducations from './components/educations/MyEducations.js'
 import MyContacts from './components/contacts/MyContacts.js'
@@ -27,7 +30,7 @@ class App extends Component {
 
 
   render() {
-    const { loggedIn, projects } = this.props
+    const { loggedIn, projects, blogs } = this.props
 
     return (
         <div className="nav">
@@ -38,7 +41,6 @@ class App extends Component {
             <Route exact path='/logout' component={Logout}/>
 
             <Route exact path='/projects' component={MyProjects}/>
-
             <Route exact path='/projects/:id' render={props => {
               const project = projects.attributes.projects.find((element, index) => index === parseInt(props.match.params.id))
               console.log(project)
@@ -46,21 +48,26 @@ class App extends Component {
             }
           }/>
             <Route exact path='/blogs' component={MyBlogs}/>
+            <Route exact path='/blogs/:id' render={props => {
+              const blog = blogs.attributes.blogs.find((element, index) => index === parseInt(props.match.params.id))
+              console.log(blog)
+              return <Blog blog={blog} {...props}/>
+            }
+          }/>
             <Route exact path='/experiences' component={MyExperiences}/>
             <Route exact path='/educations' component={MyEducations}/>
             <Route exact path='/contacts' component={MyContacts}/>
             <Route exact path='/abouts' component={MyAbouts}/>
         </Switch>
-
         </div>
     );
   }
 }
-//            projekti mi nemaju ID za find
 const mapStateToProps = state => {
   return ({
     loggedIn: !!state.currentUser,
-    projects: state.currentUser
+    projects: state.currentUser,
+    blogs: state.currentUser
   })
 }
 
