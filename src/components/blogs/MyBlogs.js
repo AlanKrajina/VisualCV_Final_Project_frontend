@@ -13,12 +13,8 @@ const MyBlogs = ({ currentUser, loggedIn  }) => {
            <p key={index}><Link to={`/blogs/${index}`}>{element.attributes.title}</Link></p>
         </div>
         )} </div> : <p>no blogs</p>
-
   )
 }
-
-
-
 
 const mapStateToProps = ({ currentUser }) => {
   return {

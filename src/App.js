@@ -11,7 +11,7 @@ import Signup from './components/Signup.js'
 import { Route, Switch, withRouter } from 'react-router-dom' // installed and imported dependencies
 
 import MyProjects from './components/projects/MyProjects.js'
-import Project from './components/projects/Project.js'
+import ProjectModal from './components/Modal/ProjectModal.js'
 
 import MyBlogs from './components/blogs/MyBlogs.js'
 import Blog from './components/blogs/Blog.js'
@@ -23,6 +23,24 @@ import MyAbouts from './components/abouts/MyAbouts.js'
 
 
 class App extends Component {
+// added
+  state = {
+    modalIsOpen: false
+  }
+
+  showModal = () => {
+    this.setState({modalIsOpen: true});
+  }
+
+  closeModal = () => {
+    this.setState({modalIsOpen: false});
+  }
+
+
+
+
+
+
 
   componentDidMount() {
     this.props.getCurrentUser()
@@ -44,7 +62,14 @@ class App extends Component {
             <Route exact path='/projects/:id' render={props => {
               const project = projects.attributes.projects.find((element, index) => index === parseInt(props.match.params.id))
               console.log(project)
-              return <Project project={project} {...props}/>
+              return (
+                <div>
+              <ProjectModal show={this.state.modalIsOpen} closed={this.closeModal} project={project} {...props} /> 
+              
+              </div>
+              )
+            //  <Project project={project} {...props}/>
+ 
             }
           }/>
             <Route exact path='/blogs' component={MyBlogs}/>

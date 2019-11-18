@@ -1,15 +1,32 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React, { Component } from "react";
+import "./Blog.css";
+import Modal from "../Modal/Modal.js";
 
-const Blog = ({ blog }) => {
-  return (
-    blog ?
-      <div>
-           {<h3>{blog.attributes.title}</h3>}
-           {<p>{blog.attributes.content}</p>}
-      </div> :
-      <p>This the the Trip card with no trip!</p>
-  )
+
+class Blog extends Component {
+  state = {
+    modalIsOpen: false
+  }
+
+  showModal = () => {
+    this.setState({modalIsOpen: true});
+  }
+
+  closeModal = () => {
+    this.setState({modalIsOpen: false});
+  }
+
+  render() {
+    return (
+      <div className="App">
+        {<h3>{this.props.blog.attributes.title}</h3>}
+        {<p>{this.props.blog.attributes.content}</p>}
+        {<p>{this.props.blog.attributes.comments.map(comment => comment.text)}</p>}
+        <Modal show={this.state.modalIsOpen} closed={this.closeModal}/>
+        <button className="Button" onClick={this.showModal}>Create a Comment</button>
+      </div>
+    );
+  }
 }
 
-export default Blog
+export default Blog;

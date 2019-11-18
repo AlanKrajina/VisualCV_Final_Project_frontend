@@ -11,7 +11,11 @@ const modal = props => {
 
   return (
     <div className={cssClasses.join(' ')}>
-      <h1>A Modal</h1>
+      <h1>Comment:</h1>
+      <p>input field</p>
+      <button className="Button">   
+        Submit Button
+      </button>
       <button className="Button" onClick={props.closed}>   
         Dismiss
       </button>

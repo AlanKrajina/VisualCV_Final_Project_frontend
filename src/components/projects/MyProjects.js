@@ -2,11 +2,11 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-const MyProjects = ({ currentUser, loggedIn  }) => {
+const MyProjects = ({ currentUser, loggedIn }) => {
+
     return (
         loggedIn ?
         <div className="nav">
-    
             {currentUser.attributes.projects.map((element, index) => 
               <div>
                <p key={index}><Link to={`/projects/${index}`}>{element.title}</Link></p>
@@ -14,8 +14,6 @@ const MyProjects = ({ currentUser, loggedIn  }) => {
             )} </div> : null
       )
   }
-
-
 
 const mapStateToProps = ({ currentUser }) => {
   return {
