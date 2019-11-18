@@ -1,17 +1,29 @@
-import React, { Component } from 'react';
+import React from 'react'
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
-class Experiences extends Component {
+const MyProjects = ({ currentUser, loggedIn  }) => {
+  return (
+    loggedIn ?
+    <div className="nav">
 
-
-
-
-
-  render() {
-    return(
-        <div>Experiences</div>
-
-    );
+        {currentUser.attributes.experiences.map(element => 
+          <div>
+           <h4>{element.company}</h4>
+           <p>{element.position}</p>
+           <p>{element.content}</p>
+        </div>
+        )} </div> : null
+  )
   }
-};
+// seedat i mapirat nested
 
-export default Experiences;
+
+const mapStateToProps = ({ currentUser }) => {
+  return {
+    currentUser,
+    loggedIn: !!currentUser
+  }
+}
+
+export default connect(mapStateToProps)(MyProjects)

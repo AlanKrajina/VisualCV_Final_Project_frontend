@@ -1,17 +1,29 @@
-import React, { Component } from 'react';
+import React from 'react'
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
-class Educations extends Component {
+const MyProjects = ({ currentUser, loggedIn  }) => {
+  return (
+    loggedIn ?
+    <div className="nav">
 
+        {currentUser.attributes.educations.map(element => 
+          <div>
+           <h4>{element.school}</h4>
+           <p>{element.location}</p>
+           <p>{element.content}</p>
+           <h5>{element.certification_name}</h5>
+           <p>{element.certification_content}</p>
+        </div>
+        )} </div> : null
+  )
+}
 
-
-
-
-  render() {
-    return(
-        <div>Educations</div>
-
-    );
+const mapStateToProps = ({ currentUser }) => {
+  return {
+    currentUser,
+    loggedIn: !!currentUser
   }
-};
+}
 
-export default Educations;
+export default connect(mapStateToProps)(MyProjects)

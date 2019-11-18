@@ -1,17 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react'
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
-class Contacts extends Component {
-
-
-
-
-
-  render() {
-    return(
-        <div>Contacts</div>
-
-    );
+const MyContacts = ({ currentUser, loggedIn  }) => {
+    return (
+      loggedIn ?
+      <div className="nav">
+     { <p> {currentUser.attributes.contacts.map(element => element.mail)}</p>}
+     { <p> {currentUser.attributes.contacts.map(element => element.linkedin)}</p>}
+     { <p> {currentUser.attributes.contacts.map(element => element.github)}</p>}
+      </div> : null
+    )
   }
-};
 
-export default Contacts;
+
+
+const mapStateToProps = ({ currentUser }) => {
+  return {
+    currentUser,
+    loggedIn: !!currentUser
+  }
+}
+
+export default connect(mapStateToProps)(MyContacts)
