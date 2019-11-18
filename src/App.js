@@ -40,7 +40,7 @@ class App extends Component {
             <Route exact path='/projects' component={MyProjects}/>
 
             <Route exact path='/projects/:id' render={props => {
-              const project = projects.attributes.projects.find((currElement, index) => index === props.match.params.id)
+              const project = projects.attributes.projects.find((element, index) => index === parseInt(props.match.params.id))
               console.log(project)
               return <Project project={project} {...props}/>
             }
