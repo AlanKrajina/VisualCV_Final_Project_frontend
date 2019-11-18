@@ -10,6 +10,13 @@ import Signup from './components/Signup.js'
 import Home from './components/Home.js'
 import { Route, Switch, withRouter } from 'react-router-dom' // installed and imported dependencies
 
+import MyProjects from './components/projects/MyProjects.js'
+import MyBlogs from './components/blogs/MyBlogs.js'
+import MyExperiences from './components/experiences/MyExperiences.js'
+import MyEducations from './components/educations/MyEducations.js'
+import MyContacts from './components/contacts/MyContacts.js'
+import MyAbouts from './components/abouts/MyAbouts.js'
+
 
 class App extends Component {
 
@@ -28,6 +35,13 @@ class App extends Component {
             <Route exact path='/login' component={Login}/> 
             <Route exact path='/signup' component={Signup}/>
             <Route exact path='/logout' component={Logout}/>
+
+            <Route exact path='/projects' component={MyProjects}/>
+            <Route exact path='/blogs' component={MyBlogs}/>
+            <Route exact path='/experiences' component={MyExperiences}/>
+            <Route exact path='/educations' component={MyEducations}/>
+            <Route exact path='/contacts' component={MyContacts}/>
+            <Route exact path='/abouts' component={MyAbouts}/>
         </Switch>
 
         </div>
