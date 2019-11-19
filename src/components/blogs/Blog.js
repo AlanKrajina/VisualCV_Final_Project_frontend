@@ -4,7 +4,7 @@ import Modal from "../Modal/Modal.js";
 
 
 class Blog extends Component {
-  state = {
+/*   state = {
     modalIsOpen: false
   }
 
@@ -14,7 +14,7 @@ class Blog extends Component {
 
   closeModal = () => {
     this.setState({modalIsOpen: false});
-  }
+  } */
 
   render() {
     return (
@@ -22,11 +22,14 @@ class Blog extends Component {
         {<h3>{this.props.blog.attributes.title}</h3>}
         {<p>{this.props.blog.attributes.content}</p>}
         {<p>{this.props.blog.attributes.comments.map(comment => comment.text)}</p>}
-        <Modal show={this.state.modalIsOpen} closed={this.closeModal}/>
-        <button className="Button" onClick={this.showModal}>Create a Comment</button>
+        <button>Create a Comment</button>
       </div>
     );
   }
 }
 
 export default Blog;
+
+
+/* <Modal show={this.state.modalIsOpen} closed={this.closeModal}/>
+<button className="Button" onClick={this.showModal}>Create a Comment</button> */
