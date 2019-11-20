@@ -14,7 +14,8 @@ import MyProjects from './components/projects/MyProjects.js'
 import ProjectModal from './components/Modal/ProjectModal.js'
 
 import MyBlogs from './components/blogs/MyBlogs.js'
-import Blog from './components/blogs/Blog.js'
+import BlogModal from './components/Modal/BlogModal.js'
+
 
 import MyExperiences from './components/experiences/MyExperiences.js'
 import MyEducations from './components/educations/MyEducations.js'
@@ -68,7 +69,6 @@ class App extends Component {
               
               </div>
               )
-            //  <Project project={project} {...props}/>
  
             }
           }/>
@@ -76,7 +76,7 @@ class App extends Component {
             <Route exact path='/blogs/:id' render={props => {
               const blog = blogs.attributes.blogs.find(element => element.id === props.match.params.id)
               console.log(blog)
-              return <Blog blog={blog} {...props}/>
+              return <BlogModal blog={blog} {...props}/>
             }
           }/>
             <Route exact path='/experiences' component={MyExperiences}/>
