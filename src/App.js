@@ -74,7 +74,7 @@ class App extends Component {
           }/>
             <Route exact path='/blogs' component={MyBlogs}/>
             <Route exact path='/blogs/:id' render={props => {
-              const blog = blogs.attributes.blogs.find((element, index) => index === parseInt(props.match.params.id))
+              const blog = blogs.attributes.blogs.find(element => element.id === props.match.params.id)
               console.log(blog)
               return <Blog blog={blog} {...props}/>
             }

@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import "./Blog.css";
-import Modal from "../Modal/Modal.js";
-
 
 class Blog extends Component {
 /*   state = {
@@ -22,7 +20,6 @@ class Blog extends Component {
         {<h3>{this.props.blog.attributes.title}</h3>}
         {<p>{this.props.blog.attributes.content}</p>}
         {<p>{this.props.blog.attributes.comments.map(comment => comment.text)}</p>}
-        <button>Create a Comment</button>
       </div>
     );
   }

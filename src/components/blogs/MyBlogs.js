@@ -8,9 +8,9 @@ const MyBlogs = ({ currentUser, loggedIn  }) => {
     loggedIn ?
     <div className="nav">
 
-        {currentUser.attributes.blogs.map((element, index) => 
+        {currentUser.attributes.blogs.map( element => 
           <div>
-           <p key={index}><Link to={`/blogs/${index}`}>{element.attributes.title}</Link></p>
+           <p key={element.id}><Link to={`/blogs/${element.id}`}>{element.attributes.title}</Link></p>
         </div>
         )} </div> : <p>no blogs</p>
   )
