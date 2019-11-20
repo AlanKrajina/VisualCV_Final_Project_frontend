@@ -73,29 +73,6 @@ export const login = (credentials, history) => {
     }
   }
 
-/* redux dev:
-
-currentUser:
-  id(pin):"1"
-  type(pin):"user"
-
-  attributes:
-    username(pin):"Alan"
-
-    projects:
-        0
-        title(pin):"Test project 1"
-        content(pin):"text text text text text text "
-        video_link(pin):"https://www.youtube.com/"
-        github(pin):"https://github.com/"
-        1
-        title(pin):"Test project 2"
-        content(pin):"text text text text text text "
-        video_link(pin):"https://www.youtube.com/"
-        github(pin):"https://github.com/"
-.
-.
-. */
 
 
 export const getCurrentUser = () => {
@@ -137,6 +114,8 @@ export const getCurrentUser = () => {
   export const logout = () => {
     return dispatch => {
       dispatch(clearCurrentUser())  // dispatched action.type to return NULL from reducer   (above)
+   //   dispatch(clearTrips())
+
       return fetch('http://localhost:3001/api/v1/logout', {   //  delete "/api/v1/logout", to: "api/v1/sessions#destroy"
         credentials: "include",
         method: "DELETE"

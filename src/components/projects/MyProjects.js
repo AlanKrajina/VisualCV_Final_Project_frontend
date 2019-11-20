@@ -8,7 +8,7 @@ const MyProjects = ({ currentUser, loggedIn }) => {
         loggedIn ?
         <div className="nav">
             {currentUser.attributes.projects.map(element => 
-              <div>
+              <div key={element.id}>
                <p key={element.id}><Link to={`/projects/${element.id}`}>{element.title}</Link></p>
             </div>
             )} </div> : null
