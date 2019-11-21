@@ -3,7 +3,7 @@ import './App.css';
 import { connect } from 'react-redux'
 import { getCurrentUser } from "./actions/currentUser.js" // user from API
 import NavBar from './components/NavBar.js'
-import Home from './components/Home.js'
+//import Home from './components/Home.js'
 
 import Login from './components/Login.js'
 import Logout from './components/Logout.js'
@@ -53,7 +53,7 @@ class App extends Component {
 
     return (
         <div className="nav">
-        { loggedIn ? <NavBar/> : <Home/> }
+        { loggedIn ? <NavBar/> : <Login/> }
         <Switch>
             <Route exact path='/login' component={Login}/> 
             <Route exact path='/signup' component={Signup}/>
