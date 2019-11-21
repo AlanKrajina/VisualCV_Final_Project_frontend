@@ -1,0 +1,15 @@
+import React, {Component} from 'react';
+import sample from './sample.mp4';
+
+class SampleVideo extends Component {
+
+    render () {
+        return (
+            <video id="background-video" loop autoPlay>
+                <source src={sample} type='video/mp4' />
+            </video>
+        )
+    }
+};
+
+export default SampleVideo;

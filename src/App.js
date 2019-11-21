@@ -21,6 +21,7 @@ import MyExperiences from './components/experiences/MyExperiences.js'
 import MyEducations from './components/educations/MyEducations.js'
 import MyContacts from './components/contacts/MyContacts.js'
 import MyAbouts from './components/abouts/MyAbouts.js'
+import SampleVideo from './components/SampleVideo';
 
 
 class App extends Component {
@@ -38,11 +39,6 @@ class App extends Component {
   }
 
 
-
-
-
-
-
   componentDidMount() {
     this.props.getCurrentUser()
   }
@@ -53,7 +49,12 @@ class App extends Component {
 
     return (
         <div className="nav">
-        { loggedIn ? <NavBar/> : <Login/> }
+        { loggedIn ? <NavBar/> : 
+        <div>
+        <Login/>
+        <SampleVideo/>
+        </div>
+         }
         <Switch>
             <Route exact path='/login' component={Login}/> 
             <Route exact path='/signup' component={Signup}/>
