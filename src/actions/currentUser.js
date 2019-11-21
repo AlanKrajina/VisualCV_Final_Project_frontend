@@ -46,7 +46,7 @@ export const signup = (credentials, history) => { // credentials = {username: "A
 // login route rails sessions contr
 
 export const login = (credentials, history) => {
-    /* console.log(credentials)
+    /* 
     {username: "Alan", password: "password"} */
 
     return dispatch => {
