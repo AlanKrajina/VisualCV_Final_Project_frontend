@@ -1,4 +1,4 @@
-import React from "react";
+/* import React from "react";
 import { connect } from 'react-redux'
 
 import "./Modal.css";
@@ -23,5 +23,5 @@ const modal = props => {
   );
 };
 
-
 export default modal;
+ */

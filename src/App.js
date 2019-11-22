@@ -3,7 +3,6 @@ import './App.css';
 import { connect } from 'react-redux'
 import { getCurrentUser } from "./actions/currentUser.js" // user from API
 import NavBar from './components/NavBar.js'
-//import Home from './components/Home.js'
 
 import Login from './components/Login.js'
 import Logout from './components/Logout.js'
@@ -22,6 +21,8 @@ import MyEducations from './components/educations/MyEducations.js'
 import MyContacts from './components/contacts/MyContacts.js'
 import MyAbouts from './components/abouts/MyAbouts.js'
 import SampleVideo from './components/SampleVideo';
+
+//import Weather from './components/SearchableWeathersContainer/Weather.js';
 
 
 class App extends Component {
@@ -84,8 +85,11 @@ class App extends Component {
             <Route exact path='/educations' component={MyEducations}/>
             <Route exact path='/contacts' component={MyContacts}/>
             <Route exact path='/abouts' component={MyAbouts}/>
+
+
         </Switch>
         </div>
+
     );
   }
 }

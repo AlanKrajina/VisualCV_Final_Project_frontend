@@ -8,9 +8,11 @@ class Comment extends Component {
     return (
       <div>
         <li>
-          {comment.text}
+
+          {comment.text} 
         </li>
-        <button onClick={() => deleteComment(comment.id)}> X </button>
+          <button onClick={() => deleteComment(comment.id)}> Delete Comment </button>
+
       </div>
     );
   }

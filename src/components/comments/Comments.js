@@ -8,7 +8,7 @@ class Comments extends Component {
       comment => comment.blogId === this.props.blogId
     );
 
-    const renderComments = associatedComments.map((r) => {return <Comment key={r.id} comment={r} deleteComment={this.props.deleteComment}/>})
+    const renderComments = associatedComments.map( r => {return <Comment key={r.id} comment={r} deleteComment={this.props.deleteComment}/>})
 
     return (
       <div>{renderComments}</div>

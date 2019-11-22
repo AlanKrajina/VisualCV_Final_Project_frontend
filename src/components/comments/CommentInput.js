@@ -27,6 +27,7 @@ class CommentInput extends Component {
   render() {
     return (
       <div>
+        Create a comment:
         <form onSubmit={event => this.handleOnSubmit(event)}>
           <input
             type='text'
