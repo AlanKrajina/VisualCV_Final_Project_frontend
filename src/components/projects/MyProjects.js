@@ -1,12 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import "../Modal/Modal.css"
 
 const MyProjects = ({ currentUser, loggedIn }) => {
 
     return (
         loggedIn ?
-        <div className="nav">
+        <div className="HomepageView">
             {currentUser.attributes.projects.map(element => 
               <div key={element.id}>
                <p key={element.id}><Link to={`/projects/${element.id}`}>{element.title}</Link></p>

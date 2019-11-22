@@ -1,10 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import "../Modal/Modal.css"
 
 const MyProjects = ({ currentUser, loggedIn  }) => {
   return (
     loggedIn ?
-    <div className="nav">
+    <div className="HomepageView">
    { <p> {currentUser.attributes.abouts.map(element => element.content)}</p>}
     </div> : null
   )

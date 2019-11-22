@@ -1,10 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import "../Modal/Modal.css"
 
 const MyProjects = ({ currentUser, loggedIn  }) => {
   return (
     loggedIn ?
-    <div className="nav">
+    <div className="HomepageView">
 
         {currentUser.attributes.experiences.map(element => 
           <div>
@@ -15,7 +16,6 @@ const MyProjects = ({ currentUser, loggedIn  }) => {
         )} </div> : null
   )
   }
-// seedat i mapirat nested
 
 
 const mapStateToProps = ({ currentUser }) => {

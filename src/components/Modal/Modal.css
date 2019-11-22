@@ -57,3 +57,13 @@
         transform: translateY(-100%);
     }
 }
+
+.HomepageView{
+    position: fixed;
+    z-index: 200;
+    background-color: white;
+    text-align: center;
+    top: 20%;
+    left: 25%;
+    width: 50%;
+}

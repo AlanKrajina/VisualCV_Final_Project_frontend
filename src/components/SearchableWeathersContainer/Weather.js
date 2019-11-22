@@ -1,26 +1,25 @@
-import React from 'react';
-import "../Modal/Modal.css";
- 
+import React from 'react'; 
 
-const Weather = ({ weathers }) => (    
+const Weather = ({ weathers }) => {    
 
-    <div>
-    { weathers.map(weather => 
-        <div key={weather.headline}>
-        <h3>{weather.display_title}</h3>
-        </div>) }
+    if (!weathers.main) {
+        return null;
+      }
+    return (
+
+    <div style={{color: "red"}}>
+        <p>City: { weathers.name}</p>
+        <p>Temperature: {Math.round(weathers.main.temp -273.15)}°C</p>
+        <p>Humidity: {weathers.main.humidity}%</p>
+        <p>Wind: {weathers.wind.speed}km/h</p>
+        <p>Forecast: {weathers.weather.map(w=>w.main)}</p>
     </div>
-)
+    )}
 
 Weather.defaultProps = {
     weathers: []
   };
 // defaultProps object to the component; when React renders the component, 
-// the default props will be used unless the parent overrides them
+// the default props will be used unless the parent overrides them    <p>{ weathers.main.temp}</p>
 
 export default Weather;
-
-//<h3>{weather.main}</h3>
-
-//https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22
-//https://openweathermap.org/current

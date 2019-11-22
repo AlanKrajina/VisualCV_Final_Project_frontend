@@ -1,12 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import "../Modal/Modal.css"
 
 const MyBlogs = ({ currentUser, loggedIn  }) => {
 
   return (
     loggedIn ?
-    <div className="nav">
+    <div className="HomepageView">
 
         {currentUser.attributes.blogs.map( element => 
           <div key={element.id}>
