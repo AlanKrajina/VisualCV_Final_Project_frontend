@@ -36,7 +36,7 @@ const Login = ({ loginFormData, updateLoginForm, login , history}) => {
     <form onSubmit={handleSubmit}>
       <input style={{visibility: "hidden"}} placeholder="username" value={loginFormData.username} name="username" type="text" onChange={handleInputChange} />
       <input style={{visibility: "hidden"}} placeholder="password" value={loginFormData.password} name="password" type="text" onChange={handleInputChange} />
-      <input type="submit" value="Open VisualCV"/>
+      <input type="submit" value="Login to VisualCV"/>
     </form>
       <p style={{color: "white"}}>
         FACTS

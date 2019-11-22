@@ -87,19 +87,11 @@ export const getCurrentUser = () => {
       })
         .then(r => r.json())
         .then(response => {
-          if (response.error) {
-            alert(response.error)
-          } else {
             dispatch(setCurrentUser(response.data))
-          }
         })
         .catch(console.log)
     }
   }
-
-  /* now after typing username and password THERE is NO alert(response.error) (no one logged in)
-  meaning user loged in
-  currentUser set (redux tools) */
 
 
 

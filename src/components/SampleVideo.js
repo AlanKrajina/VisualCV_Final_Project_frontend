@@ -5,7 +5,7 @@ class SampleVideo extends Component {
 
     render () {
         return (
-            <video id="background-video" loop autoPlay>
+            <video id="background-video" loop autoPlay muted>
                 <source src={sample} type='video/mp4' />
             </video>
         )
