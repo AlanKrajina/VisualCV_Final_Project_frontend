@@ -7,10 +7,7 @@ import SearchableWeathersContainer from './SearchableWeathersContainer/Searchabl
 const NavBar = ({ currentUser, loggedIn }) => {
   return (
     <div className="NavBar">
-      <div>
-      Weather Checker
-      <SearchableWeathersContainer/>
-      </div>
+
       <NavLink style={{fontSize: "30px"}} exact activeClassName="active" to="/projects"  >Projects </NavLink>
       <NavLink style={{fontSize: "30px"}} exact activeClassName="active" to="/blogs"  >Blogs </NavLink>
       <NavLink style={{fontSize: "30px"}} exact activeClassName="active" to="/experiences"  >Experience </NavLink>

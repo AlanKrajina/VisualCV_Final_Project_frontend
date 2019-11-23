@@ -8,7 +8,7 @@ const MyBlogs = ({ currentUser, loggedIn  }) => {
   return (
     loggedIn ?
     <div className="HomepageView">
-
+        List of Blogs:
         {currentUser.attributes.blogs.map( element => 
           <div key={element.id}>
            <p key={element.id}><Link to={`/blogs/${element.id}`}>{element.attributes.title}</Link></p>

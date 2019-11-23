@@ -39,7 +39,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 70%;
+  width: 80%;
+  margin-left: 10%;
 
 }
 
@@ -60,3 +61,14 @@
 
   }
 
+#sectionStyle{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  z-index: -2;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

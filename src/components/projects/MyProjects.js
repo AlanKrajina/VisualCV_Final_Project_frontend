@@ -8,6 +8,7 @@ const MyProjects = ({ currentUser, loggedIn }) => {
     return (
         loggedIn ?
         <div className="HomepageView">
+            List of Projects:
             {currentUser.attributes.projects.map(element => 
               <div key={element.id}>
                <p key={element.id}><Link to={`/projects/${element.id}`}>{element.title}</Link></p>

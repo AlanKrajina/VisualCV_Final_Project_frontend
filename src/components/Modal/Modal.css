@@ -61,9 +61,11 @@
 .HomepageView{
     position: fixed;
     z-index: 200;
-    background-color: white;
     text-align: center;
     top: 20%;
     left: 25%;
     width: 50%;
+    background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5));
+    border: 1px solid rgb(82, 118, 248);
+    border-radius: 25px;
 }

@@ -21,8 +21,10 @@ import MyEducations from './components/educations/MyEducations.js'
 import MyContacts from './components/contacts/MyContacts.js'
 import MyAbouts from './components/abouts/MyAbouts.js'
 import SampleVideo from './components/SampleVideo';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Section from './components/BgImage.js';
 
-//import Weather from './components/SearchableWeathersContainer/Weather.js';
+import SearchableWeathersContainer from './components/SearchableWeathersContainer/SearchableWeathersContainer.js'
 
 
 class App extends Component {
@@ -49,8 +51,14 @@ class App extends Component {
     const { loggedIn, projects, blogs } = this.props
 
     return (
-        <div className="nav">
-        { loggedIn ? <NavBar/> : 
+        <div>
+        { loggedIn ? 
+        <div>
+        <NavBar/> 
+        <SearchableWeathersContainer/>        
+
+        <Section/>        
+        </div> : 
         <div>
         <Login/>
         <SampleVideo/>
@@ -66,9 +74,8 @@ class App extends Component {
               const project = projects.attributes.projects.find(element => element.id === parseInt(props.match.params.id))
               console.log(project)
               return (
-                <div>
+              <div>
               <ProjectModal show={this.state.modalIsOpen} closed={this.closeModal} project={project} {...props} /> 
-              
               </div>
               )
  

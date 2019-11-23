@@ -2,18 +2,19 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { logout } from "../actions/currentUser.js"
 import { withRouter } from 'react-router-dom'
+import { Form , Col , Button } from 'react-bootstrap'
 
 
 const Logout = ({ logout, history }) => {
   return (
-    <form onSubmit={(event) => {
+    <Form onSubmit={(event) => {
         event.preventDefault()
         logout() // onSubmit this function dispatches action.type from actions "clearCurrentUser" to reducer "currentUser" and returns NULL
         history.push('/')
       }
     }>
       <input type="submit" value="Log Out"/>
-    </form>
+    </Form>
   )
 }
 
