@@ -1,22 +1,25 @@
 .Modal {
     position: fixed;
     z-index: 200;
-    border: 1px solid #eee;
+    border: 2px solid rgb(3, 104, 144);
     box-shadow: 0 2px 2px #ccc;
-    background-color: white;
+    background: linear-gradient(rgba(0, 14, 84, 0.5), rgba(52, 85, 234, 0.5));
     padding: 10px;
     text-align: center;
     box-sizing: border-box;
-    top: 30%;
-    left: 25%;
-    width: 50%;
+    top: 20%;
+    left: 30%;
+    width: 40%;
     transition: all 0.3s ease-out;
-    
+    border-radius: 25px;
+    color: aqua;
+    font: 1.2em cursive;
+
 }
 
-.Modal2 {
-    padding-right: 20em;
-}
+  .Modal2 {
+padding-bottom: 20px;
+}  
 
 
 
@@ -58,14 +61,14 @@
     }
 }
 
-.HomepageView{
-    position: fixed;
-    z-index: 200;
-    text-align: center;
-    top: 20%;
-    left: 25%;
-    width: 50%;
-    background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5));
-    border: 1px solid rgb(82, 118, 248);
-    border-radius: 25px;
-}
+pre {
+    overflow-x: auto;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap !important;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+   }
+
+a>div { display: none; }
+a:hover>div { display: block; }

@@ -3,8 +3,12 @@ import { connect } from 'react-redux'
 import { updateLoginForm } from "../actions/loginForm.js"
 import { login } from "../actions/currentUser.js"
 import "../components/Modal/Modal.css";
+import { Button } from 'react-bootstrap'
+import home from '../home.jpeg';
 
-
+const sectionStyle = {
+  backgroundImage: `url(${home})`,
+};
 
 
 const Login = ({ loginFormData, updateLoginForm, login , history}) => {
@@ -37,19 +41,30 @@ const Login = ({ loginFormData, updateLoginForm, login , history}) => {
     <form  className="Modal2" onSubmit={handleSubmit}>
       <input style={{visibility: "hidden"}} placeholder="username" value={loginFormData.username} name="username" type="text" onChange={handleInputChange} />
       <input style={{visibility: "hidden"}} placeholder="password" value={loginFormData.password} name="password" type="text" onChange={handleInputChange} />
-      <input type="submit" value="Login to VisualCV"/>
+      <Button variant="primary" type="submit">
+      Login to VisualCV
+      </Button>
     </form>
       <div>
-        <h4>FACTS title</h4>
-        <p>asdasdasd</p>
-        <p>asdasdasd</p>
-        <p>asdasdasd</p>
-        <p>asdasdasd</p>
+        <h4>FACTS</h4>
+        <div style={{color: "blue"}}>
+          <p>Welcome to my portfolio project VisualCV.</p>
+          <p>Project itself combines two ideas, first being my personal website and online CV, second a fully completed Flatiron School final project.
+           VisualCV is build upon React/Redux for frontend and Rails for backend.</p>
+          <p>Three main parts of the project:</p>
+          <p>1. Utilization of Rails backend API + React/Redux (this involves Login on press of a button - no credentials needed)</p>
+          <p>2. Usage of an External Api from a opensource website using only React (Weather Checker component)  </p>
+          <p>3. Ability to add comments on a Blog post using React/Redux without API </p>
+        </div>
+        <p className="quote">“Things are only impossible until they are not.” ― Jean-Luc Picard</p>
+        <a>Hover to Engage
+        <div id="sectionStylePicard" style={ sectionStyle }>
+      </div>
+        </a>
       </div>
      </div>
     )
 }
-
 
 
 
@@ -65,17 +80,3 @@ const mapStateToProps = state => { // taking state from REDUX thats ALREADY in t
   }
 
 export default connect(mapStateToProps, { updateLoginForm, login })(Login)
-// connect to redux
-// second argument -> imported action
-
-
-
-
-
-/* mapStateToProps // taking state from REDUX 
-
-redux dev:
-
-loginForm
-username(pin):"asdasd"
-password(pin):"asdds" */

@@ -7,7 +7,7 @@ const MyBlogs = ({ currentUser, loggedIn  }) => {
 
   return (
     loggedIn ?
-    <div className="HomepageView">
+    <div className="Modal">
         List of Blogs:
         {currentUser.attributes.blogs.map( element => 
           <div key={element.id}>

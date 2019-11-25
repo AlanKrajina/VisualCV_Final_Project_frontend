@@ -84,6 +84,25 @@
 
 }
 
+#sectionStylePicard{
+  position: fixed;
+  z-index: 200;
+  border: 2px solid rgb(3, 104, 144);
+  padding: 10px;
+  text-align: center;
+  top: 20%;
+  left: 30%;
+  width: 40%;
+  border-radius: 25px;
+  height: 68%;
+}
+
+.quote{
+  color: #055b71;
+  font: 15px cursive;
+
+}
+
 #weatherStyle {
   font: 15px cursive;
   font-style: italic;

@@ -5,7 +5,7 @@ import "../Modal/Modal.css"
 const MyProjects = ({ currentUser, loggedIn  }) => {
   return (
     loggedIn ?
-    <div className="HomepageView">
+    <div className="Modal">
    { <p> {currentUser.attributes.abouts.map(element => element.content)}</p>}
     </div> : null
   )

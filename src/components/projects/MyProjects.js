@@ -7,7 +7,7 @@ const MyProjects = ({ currentUser, loggedIn }) => {
 
     return (
         loggedIn ?
-        <div className="HomepageView">
+        <div className="Modal">
             List of Projects:
             {currentUser.attributes.projects.map(element => 
               <div key={element.id}>
