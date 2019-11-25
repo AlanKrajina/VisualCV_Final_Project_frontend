@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button } from 'react-bootstrap'
 
 class Comment extends Component {
 
@@ -7,11 +8,11 @@ class Comment extends Component {
 
     return (
       <div>
-        <li>
+        <li style={{marginTop: "20px", fontSize: "15px"}}>
 
           {comment.text} 
         </li>
-          <button onClick={() => deleteComment(comment.id)}> Delete Comment </button>
+          <Button style={{marginTop: "10px"}} onClick={() => deleteComment(comment.id)}> Delete </Button>
 
       </div>
     );

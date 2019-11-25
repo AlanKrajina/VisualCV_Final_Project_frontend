@@ -52,14 +52,13 @@ const Login = ({ loginFormData, updateLoginForm, login , history}) => {
           <p>Project itself combines two ideas, first being my personal website and online CV, second a fully completed Flatiron School final project.
            VisualCV is build upon React/Redux for frontend and Rails for backend.</p>
           <p>Three main parts of the project:</p>
-          <p>1. Utilization of Rails backend API + React/Redux (this involves Login on press of a button - no credentials needed)</p>
-          <p>2. Usage of an External Api from a opensource website using only React (Weather Checker component)  </p>
+          <p>1. Utilization of Rails backend API + React/Redux GET and POST fetch requests (this involves Login on press of a button - no credentials needed)</p>
+          <p>2. Usage of an External API from a opensource website using only React (Weather Checker component)  </p>
           <p>3. Ability to add comments on a Blog post using React/Redux without API </p>
         </div>
         <p className="quote">“Things are only impossible until they are not.” ― Jean-Luc Picard</p>
         <a>Hover to Engage
-        <div id="sectionStylePicard" style={ sectionStyle }>
-      </div>
+          <div id="sectionStylePicard" style={ sectionStyle }></div>
         </a>
       </div>
      </div>

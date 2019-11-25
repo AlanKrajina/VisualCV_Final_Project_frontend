@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Form , Col , Button } from 'react-bootstrap'
 
 class CommentInput extends Component {
 
@@ -28,13 +29,18 @@ class CommentInput extends Component {
     return (
       <div>
         Create a comment:
-        <form onSubmit={event => this.handleOnSubmit(event)}>
-          <input
+        <Form onSubmit={event => this.handleOnSubmit(event)}>
+          
+        <Form.Control
+            style={{width: "60%", marginLeft: "20%"}}
             type='text'
             value={this.state.text}
             onChange={event => this.handleOnChange(event)} />
-          <input type='submit' />
-        </form>
+            
+            <Button style={{marginTop: "20px"}}variant="primary" type="submit">
+              Submit
+            </Button>
+        </Form>
       </div>
     );
   }

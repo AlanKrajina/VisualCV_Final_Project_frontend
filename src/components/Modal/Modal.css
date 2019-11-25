@@ -17,11 +17,31 @@
 
 }
 
-  .Modal2 {
+.Modal2 {
 padding-bottom: 20px;
 }  
 
+.Modal .Education {
+    color: beige;
+    font-size: 15px;
+    }  
 
+.Modal .Certs {
+    color: beige;
+    font-size: 12px;
+    }  
+
+.Modal .Certs2 {
+    color: aqua;
+    font-size: 14px;
+}  
+
+.Modal .Certs3 {
+    color: rgb(114, 136, 234);
+    font-size: 25px;
+    text-shadow: 2px 2px 4px #000000;
+    padding-top: 20px;
+} 
 
 .ModalOpen {
     animation: openModal 0.4s ease-out forwards;

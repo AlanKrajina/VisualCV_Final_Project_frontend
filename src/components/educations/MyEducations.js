@@ -10,12 +10,17 @@ const MyProjects = ({ currentUser, loggedIn  }) => {
         {currentUser.attributes.educations.map(element => 
           <div>
            <h4>{element.school}</h4>
-           <p>{element.location}</p>
-           <p>{element.content}</p>
-           <h5>{element.certification_name}</h5>
-           <p>{element.certification_content}</p>
+           <p className="Education">{element.location}</p>
+           <p className="Education">{element.content}</p>
         </div>
-        )} </div> : null
+        )} 
+        <p className="Certs3">Certifications:</p>
+        {currentUser.attributes.educations.map(element => 
+          <div> 
+           <h5 className="Certs2">{element.certification_name}</h5>
+           <p className="Certs">{element.certification_content}</p>
+        </div>
+        )} </div> : null  
   )
 }
 
