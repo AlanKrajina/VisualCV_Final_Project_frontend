@@ -28,20 +28,21 @@ fetchWeather = (searchTerm) => {
 
   render() {
       return (
-        <div>
+        <div id="sectionStyle2">
 
         <Form onSubmit={this.handleSubmit}>
 
           <Form.Group as={Col} controlId="formGridEmail">
-            <Form.Label>Check your city's Weather</Form.Label>
+            <Form.Label >Weather Forecast:</Form.Label>
             <Form.Control 
               style={{width: "130px"}}
               type="text"
+              placeholder="city name"
               value={this.state.searchTerm}
               onChange={event => this.setState({searchTerm: event.target.value})}/>
             </Form.Group>
 
-          <Button variant="primary" type="submit">
+          <Button style={{marginLeft: "7%"}} variant="primary" type="submit">
             Submit
           </Button>
 

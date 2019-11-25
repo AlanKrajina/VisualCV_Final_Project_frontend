@@ -13,7 +13,7 @@ const Logout = ({ logout, history }) => {
         history.push('/')
       }
     }>
-      <input type="submit" value="Log Out"/>
+      <Button> <input type="submit" value="Log Out"/> </Button>
     </Form>
   )
 }

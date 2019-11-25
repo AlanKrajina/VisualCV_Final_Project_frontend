@@ -7,7 +7,7 @@ const Weather = ({ weathers }) => {
       }
     return (
 
-    <div style={{color: "red"}}>
+    <div id="weatherStyle">
         <p>City: { weathers.name}</p>
         <p>Temperature: {Math.round(weathers.main.temp -273.15)}°C</p>
         <p>Humidity: {weathers.main.humidity}%</p>
