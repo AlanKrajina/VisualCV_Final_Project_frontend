@@ -4,10 +4,13 @@ import { updateLoginForm } from "../actions/loginForm.js"
 import { login } from "../actions/currentUser.js"
 import "../components/Modal/Modal.css";
 import { Button } from 'react-bootstrap'
-import home from '../home.jpeg';
+import picard from '../picard.jpg';
 
 const sectionStyle = {
-  backgroundImage: `url(${home})`,
+  backgroundImage: `url(${picard})`,
+  backgroundSize: 'cover',
+  overflow: 'hidden',
+  height: '630px'
 };
 
 
