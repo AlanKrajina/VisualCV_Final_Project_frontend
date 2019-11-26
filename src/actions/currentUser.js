@@ -2,62 +2,32 @@ import { resetLoginForm } from "./loginForm.js"
 import { resetSignupForm } from "./signupForm.js"
 
 // synchronous action creators
-// returns plain JS object
 
-export const setCurrentUser = user => {
+export const setCurrentUser = user => {   // receives user object
     return {
       type: "SET_CURRENT_USER",
-      user
+      user                                // returns plain JS object
     }
   }
-
-// SIGNUP
-
-export const signup = (credentials, history) => { // credentials = {username: "AlanKrajina", password: "123123"}
-  return dispatch => {
-    
-    return fetch("http://localhost:3001/api/v1/signup", {  //console error failed to load
-      credentials: "include", //added from rails
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(credentials) 
-    })
-    .then(r => r.json())
-    .then(response => {
-      if (response.error) { 
-        alert(response.error)
-      } else {
-        dispatch(setCurrentUser(response.data)) // dispatch function
-        dispatch(resetSignupForm()) // clears on signup (redux signupForm)
-        history.push('/')
-      }
-    })
-    .catch(console.log)
-}
-}
 
 
 
 
 // asynchronous action creators
-// returns FUNCTION that returns FETCH with dispatch from redux
-// login route rails sessions contr
 
-export const login = (credentials, history) => {
-    /* 
-    {username: "Alan", password: "password"} */
-
-    return dispatch => {
-        return fetch("http://localhost:3001/api/v1/login", {
+export const login = (credentials, history) => {     
+/*{username: "Alan", password: "password"} */
+                                                     // returns FUNCTION that returns FETCH with dispatch from redux
+    return dispatch => {                    
+        return fetch("http://localhost:3001/api/v1/login", {       // login Routes.rb rails + sessions controller (def create) 
+                                                                   //       post "/api/v1/login", to: "api/v1/sessions#create"
           credentials: "include", //added from rails
-          method: "POST",
+          method: "POST",         // sending data
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify(credentials) // {username: "Alan", password: "password"}
-        })
+          body: JSON.stringify(credentials) // {username: "Alan", password: "password"} - loginamo i saljemo credentials
+        })                                  // moramo imat jer je POST
         .then(r => r.json())
         .then(response => {
           if (response.error) { //error from sessions controller
@@ -65,8 +35,8 @@ export const login = (credentials, history) => {
           } else {
             dispatch(setCurrentUser(response.data)) // dispatch function
             // setCurrentUser -> ACTION creator
-            dispatch(resetLoginForm()) // clears on login (redux loginForm)
-            history.push('/')             // receiving history object to return to initial url
+            dispatch(resetLoginForm())               // clears on login (redux loginForm)
+            history.push('/')                        // receiving history object to return to initial url
           }
         })
         .catch(console.log)
@@ -117,3 +87,38 @@ export const getCurrentUser = () => {
 
 
 
+
+
+
+
+
+
+
+// SIGNUP
+
+export const signup = (credentials, history) => { // credentials = {username: "AlanKrajina", password: "123123"}
+  return dispatch => {
+    
+    return fetch("http://localhost:3001/api/v1/signup", {  //console error failed to load
+      credentials: "include", //added from rails
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(credentials) 
+    })
+    .then(r => r.json())
+    .then(response => {
+      if (response.error) { 
+        alert(response.error)
+      } else {
+        dispatch(setCurrentUser(response.data)) // dispatch function
+        dispatch(resetSignupForm()) // clears on signup (redux signupForm)
+        history.push('/')
+      }
+    })
+    .catch(console.log)
+}
+}
+
+ 

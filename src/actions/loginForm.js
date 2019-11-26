@@ -4,7 +4,7 @@ export const updateLoginForm = (formData) => {
     {name: "password", value: "d"} */
     return {
       type: "UPDATE_LOGIN_FORM",
-      formData
+      formData                       // returns object
     }
 }
   
