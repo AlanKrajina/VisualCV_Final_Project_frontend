@@ -70,6 +70,7 @@ class App extends Component {
             <Route exact path='/logout' component={Logout}/>
 
             <Route exact path='/projects' component={MyProjects}/>
+            { loggedIn ? 
             <Route exact path='/projects/:id' render={props => {
               const project = projects.attributes.projects.find(element => element.id === parseInt(props.match.params.id))
               console.log(project)
@@ -77,17 +78,17 @@ class App extends Component {
               <div>
               <ProjectModal show={this.state.modalIsOpen} closed={this.closeModal} project={project} {...props} /> 
               </div>
-              )
- 
+              )}}/> : null
             }
-          }/>
             <Route exact path='/blogs' component={MyBlogs}/>
+            { loggedIn ? 
+
             <Route exact path='/blogs/:id' render={props => {
               const blog = blogs.attributes.blogs.find(element => element.id === props.match.params.id)
               console.log(blog)
               return <BlogModal blog={blog} {...props}/>
-            }
-          }/>
+            }}/> : null
+            } 
             <Route exact path='/experiences' component={MyExperiences}/>
             <Route exact path='/educations' component={MyEducations}/>
             <Route exact path='/contacts' component={MyContacts}/>

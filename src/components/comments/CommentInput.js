@@ -23,6 +23,7 @@ class CommentInput extends Component {
     this.setState({
       text:''
     });
+    this.forceUpdate()
   }
 
   render() {

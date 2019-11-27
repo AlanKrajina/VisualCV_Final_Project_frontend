@@ -5,7 +5,7 @@ class Comments extends Component {
 
   render() {
     const associatedComments = this.props.comments.filter(
-      comment => comment.blogId === this.props.blogId
+      comment => comment.blogId === parseInt(this.props.blogId)
     );
 
     const renderComments = associatedComments.map( r => {return <Comment key={r.id} comment={r} deleteComment={this.props.deleteComment}/>})

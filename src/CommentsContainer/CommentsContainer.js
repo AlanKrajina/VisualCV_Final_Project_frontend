@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import CommentInput from '../components/comments/CommentInput'
 import Comments from '../components/comments/Comments'
 import { connect } from 'react-redux'
+import { createComment } from '../actions/myComments'
+import { deleteComment } from '../actions/myComments'
 
 class CommentsContainer extends Component {
 
@@ -13,7 +15,7 @@ class CommentsContainer extends Component {
             blogId={this.props.blog.id} 
             />
           <Comments
-            comments={this.props.comments}
+            comments={this.props.blog.attributes.comments}
             deleteComment={this.props.deleteComment}
             blogId={this.props.blog.id}
             />
@@ -22,17 +24,14 @@ class CommentsContainer extends Component {
   }
 }
 
-const mapStateToProps = ({ manageBlogs }) => {
-    return {
-        comments: manageBlogs.comments  
-    }
-  }
+
 
 
 const mapDispatchToProps = dispatch => ({
-  addComment: comment => dispatch({ type: 'ADD_COMMENT', comment}),
-  deleteComment: id => dispatch({type: 'DELETE_COMMENT', id})
+  addComment: (comment) => dispatch(createComment(comment)),  // umjesto ovog myBlogs action?
+  deleteComment: id => dispatch(deleteComment(id))
+  //deleteComment: id => dispatch({type: 'DELETE_COMMENT', id})
 })
 
-export default connect(mapStateToProps,mapDispatchToProps)(CommentsContainer)
 
+export default connect(null,mapDispatchToProps)(CommentsContainer)

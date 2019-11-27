@@ -1,5 +1,6 @@
 import { resetLoginForm } from "./loginForm.js"
 import { resetSignupForm } from "./signupForm.js"
+import { getMyComments } from "./myComments.js"
 
 // synchronous action creators
 
@@ -35,6 +36,7 @@ export const login = (credentials, history) => {
           } else {
             dispatch(setCurrentUser(response.data)) // dispatch function
             // setCurrentUser -> ACTION creator
+     //       dispatch(getMyComments())   // u loginu?
             dispatch(resetLoginForm())               // clears on login (redux loginForm)
             history.push('/')                        // receiving history object to return to initial url
           }
@@ -58,6 +60,8 @@ export const getCurrentUser = () => {
         .then(r => r.json())
         .then(response => {
             dispatch(setCurrentUser(response.data))
+            dispatch(getMyComments())   // u loginu?
+
         })
         .catch(console.log)
     }
