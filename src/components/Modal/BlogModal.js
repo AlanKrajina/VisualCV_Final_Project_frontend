@@ -16,7 +16,9 @@ const blogModal = props => {
     </div>
   );
 };
+// sas mi ide prema commentsu POVEZANI blog -> comment        <CommentsContainer blog={props.blog}/>
 
+// commentsCOntainer mora poslat currentUsera i blog
 
 export default blogModal;
 

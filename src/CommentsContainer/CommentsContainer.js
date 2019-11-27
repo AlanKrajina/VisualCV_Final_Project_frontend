@@ -15,7 +15,7 @@ class CommentsContainer extends Component {
             blogId={this.props.blog.id} 
             />
           <Comments
-            comments={this.props.blog.attributes.comments}
+            comments={this.props.comments}
             deleteComment={this.props.deleteComment}
             blogId={this.props.blog.id}
             />
@@ -24,7 +24,7 @@ class CommentsContainer extends Component {
   }
 }
 
-
+///////////// ovdje nesto gore ne valja, salje prazni comments array iz bloga umjesto comments od currentUsera
 
 
 const mapDispatchToProps = dispatch => ({
@@ -33,5 +33,10 @@ const mapDispatchToProps = dispatch => ({
   //deleteComment: id => dispatch({type: 'DELETE_COMMENT', id})
 })
 
+const mapStateToProps = state => {
+  return {
+    comments: state.myComments
+  }
+}
 
-export default connect(null,mapDispatchToProps)(CommentsContainer)
+export default connect(mapStateToProps,mapDispatchToProps)(CommentsContainer)

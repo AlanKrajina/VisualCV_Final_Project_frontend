@@ -1,21 +1,20 @@
-export default (state = null, action) => {
+const initialState = []
+
+
+export default (state = initialState, action) => {
     switch (action.type) {
-      case "SET_CURRENT_USER":
-        return action.user
-      case "CLEAR_CURRENT_USER": 
-        return null
-      
 
 // ovodje inicialState bi trebao bit currentUser.attributes.blogs...
 //        case "ADD_COMMENT":
 //          return initialState.concat(action.comment)
-/*           case 'ADD_COMMENTS':
+          case 'ADD_COMMENTS':
             const comment = {
                 text: action.comment.attributes.text, 
                 blogId: action.comment.relationships.blog.data.id,  
                 id: action.comment.id
             }
-            return {...state, comments: [...state.attributes.blogs.map(element => element.attributes.comments), comment]}
+            return state.concat(comment)
+          //  return {...state, comments: [...state.attributes.blogs.map(element => element.attributes.comments), comment]}
 
 
 
@@ -25,7 +24,7 @@ export default (state = null, action) => {
             return {
                ...state, 
                comments
-            }; */
+            };
 
      default:
         return state
