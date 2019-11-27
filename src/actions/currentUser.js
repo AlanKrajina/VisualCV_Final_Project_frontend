@@ -36,7 +36,7 @@ export const login = (credentials, history) => {
           } else {
             dispatch(setCurrentUser(response.data)) // dispatch function
             // setCurrentUser -> ACTION creator
-     //       dispatch(getMyComments())   // u loginu?
+            dispatch(getMyComments())   
             dispatch(resetLoginForm())               // clears on login (redux loginForm)
             history.push('/')                        // receiving history object to return to initial url
           }

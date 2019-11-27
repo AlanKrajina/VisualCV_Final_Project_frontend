@@ -43,11 +43,11 @@ export const getMyComments = () => {
         },
       })
         .then(r => r.json())
-        .then(response => {
+        .then(response => {   // response = {data: Array(29)}
           if (response.error) {
             alert(response.error)
           } else {
-            dispatch(setMyComments(response.data))
+            dispatch(setMyComments(response.data)) // ovo je OK  http://localhost:3001/api/v1/comments ima puno komentara u railsu
           }
         })
         .catch(console.log)
@@ -114,40 +114,4 @@ export const getMyComments = () => {
   }
 
 
-
-
-
-
-
-
-
-
-
-
-
-/* 
-  export default function deleteComment (state = { // state = {comments: Array(0)} jer trazi u manageBlogs reduceru
-  comments: []
-}, action) {
-  switch (action.type) {
-
-      case 'ADD_COMMENT':
-          const comment = {
-              text: action.comment.text, 
-              blogId: action.comment.blogId,  
-              id: cuid()
-          }
-          return {...state, comments: [...state.comments, comment]}
-
-      case 'DELETE_COMMENT':
-          const comments = state.comments.filter(rev => rev.id !== action.id); // state = {comments: Array(0)}
-          return {
-             ...state, 
-             comments
-          };
-
-      default:
-          return state;
-
-  }
-} */
+//

@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import './App.css';
 import { connect } from 'react-redux'
 import { getCurrentUser } from "./actions/currentUser.js" // user from API
+import { getMyComments } from "./actions/myComments.js" // user from API
+
 import NavBar from './components/NavBar.js'
 
 import Login from './components/Login.js'
@@ -44,6 +46,7 @@ class App extends Component {
 
   componentDidMount() {
     this.props.getCurrentUser()
+ //   this.props.getMyComments()
   }
 
 

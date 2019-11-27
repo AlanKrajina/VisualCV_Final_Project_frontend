@@ -24,8 +24,6 @@ class CommentsContainer extends Component {
   }
 }
 
-///////////// ovdje nesto gore ne valja, salje prazni comments array iz bloga umjesto comments od currentUsera
-
 
 const mapDispatchToProps = dispatch => ({
   addComment: (comment) => dispatch(createComment(comment)),  // umjesto ovog myBlogs action?
