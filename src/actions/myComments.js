@@ -1,5 +1,3 @@
- // async actions
-
 // synchronous actions
 export const setMyComments = comments => {
     return {
@@ -28,11 +26,7 @@ export const setMyComments = comments => {
     }
   }
   
-
-
  // async actions
-
-
 export const getMyComments = () => {
     return dispatch => {
       return fetch("http://localhost:3001/api/v1/comments", {
@@ -43,11 +37,11 @@ export const getMyComments = () => {
         },
       })
         .then(r => r.json())
-        .then(response => {   // response = {data: Array(29)}
+        .then(response => {   // response = {data: Array(2)}
           if (response.error) {
             alert(response.error)
           } else {
-            dispatch(setMyComments(response.data)) // ovo je OK  http://localhost:3001/api/v1/comments ima puno komentara u railsu
+            dispatch(setMyComments(response.data)) // http://localhost:3001/api/v1/comments 
           }
         })
         .catch(console.log)
@@ -74,18 +68,13 @@ export const getMyComments = () => {
             alert(resp.error)
           } else {
             dispatch(addComment(resp.data))
-           // dispatch(resetCommentForm())
             history.push(`/comments/${resp.data.id}`)
-            // go somewhere else --> trip show?
-            // add the new trip to the store
           }
         })
         .catch(console.log)
   
     }
   } 
-
-
 
   export const deleteComment = (commentId, history) => {
     return dispatch => {
@@ -103,15 +92,8 @@ export const getMyComments = () => {
           } else {
             dispatch(deleteCommentSuccess(commentId))
             history.push(`/comments`)
-            // go somewhere else --> trip show?
-            // add the new trip to the store
           }
         })
         .catch(console.log)
-  
     }
-  
   }
-
-
-//
