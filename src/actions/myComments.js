@@ -5,13 +5,7 @@ export const setMyComments = comments => {
       comments
     }
   }
-  
-  export const clearComments = () => {
-    return {
-      type: "CLEAR_COMMENTS"
-    }
-  }
-  
+    
   export const addComment = comment => {
     return {
       type: "ADD_COMMENTS",

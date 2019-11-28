@@ -7,9 +7,15 @@ export default (state = initialState, action) => {
 
             case 'ADD_COMMENTS':
               const comment = {
+                attributes: {
                 text: action.comment.attributes.text, 
-                blogId: action.comment.relationships.blog.data.id,  
-                id: action.comment.id
+                },
+                id:action.comment.id,
+                relationships: {
+                      blog: {
+                        data: {
+                          id: action.comment.relationships.blog.data.id
+                  }}}
             }
             return state.concat(comment)
 

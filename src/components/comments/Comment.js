@@ -9,11 +9,9 @@ class Comment extends Component {
     return (
       <div>
         <li style={{marginTop: "20px", fontSize: "15px"}}>
-
-          {comment.text} 
+          {comment.attributes.text} 
         </li>
           <Button style={{marginTop: "10px"}} onClick={() => deleteComment(comment.id)}> Delete </Button>
-
       </div>
     );
   }
