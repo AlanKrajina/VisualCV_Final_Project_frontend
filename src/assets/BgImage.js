@@ -1,4 +1,4 @@
-import home from '../home.jpeg';
+import home from './home.jpeg';
 import React, {Component} from 'react';
 
 const sectionStyle = {

@@ -4,7 +4,7 @@ import { updateLoginForm } from "../actions/loginForm.js"
 import { login } from "../actions/currentUser.js"
 import "../components/Modal/Modal.css";
 import { Button } from 'react-bootstrap'
-import picard from '../picard.jpg';
+import picard from '../assets/picard.jpg';
 
 const sectionStyle = {
   backgroundImage: `url(${picard})`,
@@ -53,12 +53,12 @@ const Login = ({ loginFormData, updateLoginForm, login , history}) => {   // des
         <h4>FACTS</h4>
         <div style={{color: "blue"}}>
           <p>Welcome to my portfolio project VisualCV.</p>
-          <p>Project itself combines two ideas, first being my personal website and online CV, second a fully completed Flatiron School final project.
+          <p>Project completes two ideas, creation of my personal website + online CV and a fully completed Flatiron School final project.
            VisualCV is build upon React/Redux for frontend and Rails for backend.</p>
-          <p>Three main parts of the project:</p>
-          <p>1. Utilization of Rails backend API + React/Redux GET and POST fetch requests (this involves Login on press of a button - no credentials needed)</p>
-          <p>2. Usage of an External API from a opensource website using only React (Weather Checker component)  </p>
-          <p>3. Ability to add comments on a Blog post using React/Redux without API </p>
+          <p>Two main parts of the project:</p>
+          <p>1. Utilization of Rails backend API + React/Redux GET and POST fetch requests to integrate Login option on press of a button (no credentials needed)</p>
+          <p>and the ability to add comments on a Blog post and sending them to database and receiving back on request. </p>
+          <p>2. Usage of an External API from a opensource website using only React (Weather Checker component)</p>
         </div>
         <p className="quote">“Things are only impossible until they are not.” ― Jean-Luc Picard</p>
         <a>Hover to Engage

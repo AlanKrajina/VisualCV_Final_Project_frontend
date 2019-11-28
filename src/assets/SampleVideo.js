@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import sample from './sample.mp4';
+import sample from '../assets/sample.mp4';
 
 class SampleVideo extends Component {
 

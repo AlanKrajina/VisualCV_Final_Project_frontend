@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import './App.css';
-import SampleVideo from './components/SampleVideo';
+import SampleVideo from './assets/SampleVideo';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Section from './components/BgImage.js';
+import Section from './assets/BgImage.js';
 import { connect } from 'react-redux'
 import { getCurrentUser } from "./actions/currentUser.js" // user from API
 
