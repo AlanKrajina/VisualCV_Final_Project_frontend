@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import CommentInput from '../components/comments/CommentInput'
-import Comments from '../components/comments/Comments'
+import CommentInput from '../comments/CommentInput'
+import Comments from '../comments/Comments'
 import { connect } from 'react-redux'
-import { createComment } from '../actions/myComments'
-import { deleteComment } from '../actions/myComments'
+import { createComment } from '../../actions/myComments'
+import { deleteComment } from '../../actions/myComments'
 
 class CommentsContainer extends Component {
 

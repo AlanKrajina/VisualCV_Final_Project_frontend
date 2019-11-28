@@ -1,6 +1,6 @@
 import React from "react";
 import "./Modal.css";
-import CommentsContainer from '../../CommentsContainer/CommentsContainer'
+import CommentsContainer from '../CommentsContainer/CommentsContainer'
 
 const blogModal = props => {                 
   const cssClasses = [
