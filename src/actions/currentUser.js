@@ -1,5 +1,4 @@
 import { resetLoginForm } from "./loginForm.js"
-import { resetSignupForm } from "./signupForm.js"
 import { getMyComments } from "./myComments.js"
 
 // synchronous action creators
@@ -10,8 +9,6 @@ export const setCurrentUser = user => {   // receives user object
       user                                // returns plain JS object
     }
   }
-
-
 
 
 // asynchronous action creators
@@ -46,7 +43,6 @@ export const login = (credentials, history) => {
   }
 
 
-
 export const getCurrentUser = () => {
     return dispatch => {
       return fetch("http://localhost:3001/api/v1/get_current_user", {
@@ -67,8 +63,6 @@ export const getCurrentUser = () => {
     }
   }
 
-
-
 // LOGOUT
 
   export const clearCurrentUser = () => { // created action.type
@@ -88,41 +82,3 @@ export const getCurrentUser = () => {
       })
     }
   }
-
-
-
-
-
-
-
-
-
-
-// SIGNUP
-
-export const signup = (credentials, history) => { // credentials = {username: "AlanKrajina", password: "123123"}
-  return dispatch => {
-    
-    return fetch("http://localhost:3001/api/v1/signup", {  //console error failed to load
-      credentials: "include", //added from rails
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(credentials) 
-    })
-    .then(r => r.json())
-    .then(response => {
-      if (response.error) { 
-        alert(response.error)
-      } else {
-        dispatch(setCurrentUser(response.data)) // dispatch function
-        dispatch(resetSignupForm()) // clears on signup (redux signupForm)
-        history.push('/')
-      }
-    })
-    .catch(console.log)
-}
-}
-
- 

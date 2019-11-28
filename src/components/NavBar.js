@@ -16,10 +16,6 @@ const NavBar = ({ currentUser, loggedIn }) => {
     </div>
   )
 }
-// { loggedIn ? <><p id="loggedin">Logged in as {currentUser.attributes.username}</p><Logout/></> : null}
-
-    // ovdje dodat componente za sve ostalo i slat propse?
-
 
     const mapStateToProps = ({ currentUser }) => {
       return {

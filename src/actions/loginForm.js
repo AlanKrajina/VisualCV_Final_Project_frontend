@@ -8,7 +8,6 @@ export const updateLoginForm = (formData) => {
     }
 }
   
-
 export const resetLoginForm = () => { // created action.type to sent do reducer and set STATE to ""
     return {
       type: "RESET_LOGIN_FORM"

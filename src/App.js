@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import './App.css';
+import SampleVideo from './components/SampleVideo';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Section from './components/BgImage.js';
 import { connect } from 'react-redux'
 import { getCurrentUser } from "./actions/currentUser.js" // user from API
 
 import NavBar from './components/NavBar.js'
 import Login from './components/Login.js'
 import Logout from './components/Logout.js'
-import Signup from './components/Signup.js'
 import { Route, Switch, withRouter } from 'react-router-dom' // installed and imported dependencies
 
 import MyProjects from './components/projects/MyProjects.js'
@@ -17,9 +19,6 @@ import MyExperiences from './components/experiences/MyExperiences.js'
 import MyEducations from './components/educations/MyEducations.js'
 import MyContacts from './components/contacts/MyContacts.js'
 import MyAbouts from './components/abouts/MyAbouts.js'
-import SampleVideo from './components/SampleVideo';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Section from './components/BgImage.js';
 import SearchableWeathersContainer from './components/SearchableWeathersContainer/SearchableWeathersContainer.js'
 
 
@@ -58,7 +57,6 @@ class App extends Component {
          }
         <Switch>
             <Route exact path='/login' component={Login}/> 
-            <Route exact path='/signup' component={Signup}/>
             <Route exact path='/logout' component={Logout}/>
             <Route exact path='/projects' component={MyProjects}/>
             { loggedIn ? 
