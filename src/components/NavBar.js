@@ -6,12 +6,12 @@ import { NavLink } from 'react-router-dom'
 const NavBar = ({ currentUser, loggedIn }) => {
   return (
     <div className="NavBar">
-      <NavLink style={{fontSize: "30px"}} exact activeClassName="active" to="/projects"  >Projects </NavLink>
-      <NavLink style={{fontSize: "30px"}} exact activeClassName="active" to="/blogs"  >Blogs </NavLink>
-      <NavLink style={{fontSize: "30px"}} exact activeClassName="active" to="/experiences"  >Experience </NavLink>
-      <NavLink style={{fontSize: "30px"}} exact activeClassName="active" to="/educations"  >Education </NavLink>
-      <NavLink style={{fontSize: "30px"}} exact activeClassName="active" to="/contacts"  >Contact </NavLink>
-      <NavLink style={{fontSize: "30px"}} exact activeClassName="active" to="/abouts"  >About</NavLink>
+      <NavLink exact activeClassName="active" to="/projects">Projects</NavLink>
+      <NavLink exact activeClassName="active" to="/blogs">Blogs</NavLink>
+      <NavLink exact activeClassName="active" to="/experiences">Experience</NavLink>
+      <NavLink exact activeClassName="active" to="/educations">Education</NavLink>
+      <NavLink exact activeClassName="active" to="/contacts">Contact</NavLink>
+      <NavLink exact activeClassName="active" to="/abouts">About</NavLink>
       <Logout/>
     </div>
   )

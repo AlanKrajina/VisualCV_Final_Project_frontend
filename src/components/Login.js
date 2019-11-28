@@ -61,7 +61,7 @@ const Login = ({ loginFormData, updateLoginForm, login , history}) => {   // des
           <p>2. Usage of an External API from a opensource website using only React (Weather Checker component)</p>
         </div>
         <p className="quote">“Things are only impossible until they are not.” ― Jean-Luc Picard</p>
-        <a>Hover to Engage
+        <a href="#null">Hover to Engage
           <div id="sectionStylePicard" style={ sectionStyle }></div>
         </a>
       </div>
