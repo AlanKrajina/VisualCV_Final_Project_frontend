@@ -22,6 +22,11 @@
 padding-bottom: 20px;
 }  
 
+.Contact {
+    width: 30%;
+    left: 35%;
+}  
+
 .Modal .Education {
     color: beige;
     font-size: 15px;
@@ -93,3 +98,9 @@ pre {
 
 a>div { display: none; }
 a:hover>div { display: block; }
+
+
+.img-responsive{
+    height: 40px;
+    border-radius: 15px;
+}

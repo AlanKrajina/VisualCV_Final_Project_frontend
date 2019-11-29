@@ -10,8 +10,8 @@ const NavBar = ({ currentUser, loggedIn }) => {
       <NavLink exact activeClassName="active" to="/blogs">Blogs</NavLink>
       <NavLink exact activeClassName="active" to="/experiences">Experience</NavLink>
       <NavLink exact activeClassName="active" to="/educations">Education</NavLink>
-      <NavLink exact activeClassName="active" to="/contacts">Contact</NavLink>
       <NavLink exact activeClassName="active" to="/abouts">About</NavLink>
+      <NavLink exact activeClassName="active" to="/contacts">Contact</NavLink>
       <Logout/>
     </div>
   )
