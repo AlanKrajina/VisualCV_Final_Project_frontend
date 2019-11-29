@@ -13,8 +13,6 @@ const MyContacts = ({ currentUser, loggedIn  }) => {
     )
   }
 
-
-
 const mapStateToProps = ({ currentUser }) => {
   return {
     currentUser,
