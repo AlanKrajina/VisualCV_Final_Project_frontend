@@ -10,8 +10,8 @@ const MyProjects = ({ currentUser, loggedIn  }) => {
         {currentUser.attributes.experiences.map(element => 
           <div>
            <h4>{element.company}</h4>
-           <p>{element.position}</p>
-           <p>{element.content}</p>
+           <p className="Education">{element.position}</p>
+           <p className="Education">{element.content}</p>
         </div>
         )} </div> : null
   )

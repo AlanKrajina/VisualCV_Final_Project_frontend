@@ -8,7 +8,7 @@ const MyProjects = ({ currentUser, loggedIn }) => {
     return (
         loggedIn ?
         <div className="Modal">
-            List of Projects:
+            <p>List of Projects:</p>
             {currentUser.attributes.projects.map(element => 
               <div key={element.id}>
                <p key={element.id}><Link to={`/projects/${element.id}`}>{element.title}</Link></p>

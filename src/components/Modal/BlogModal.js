@@ -11,14 +11,11 @@ const blogModal = props => {
   return (
     <div className={cssClasses.join(' ')}>
         {<h3>{props.blog.attributes.title}</h3>}
-        {<p>{props.blog.attributes.content}</p>}
+        {<p className="Education">{props.blog.attributes.content}</p>}
         <CommentsContainer blog={props.blog}/>
     </div>
   );
 };
-// sas mi ide prema commentsu POVEZANI blog -> comment        <CommentsContainer blog={props.blog}/>
-
-// commentsCOntainer mora poslat currentUsera i blog
 
 export default blogModal;
 

@@ -6,7 +6,7 @@ const MyProjects = ({ currentUser, loggedIn  }) => {
   return (
     loggedIn ?
     <div className="Modal">
-   { <p> {currentUser.attributes.abouts.map(element => element.content)}</p>}
+   { <p className="Education"> {currentUser.attributes.abouts.map(element => element.content)}</p>}
     </div> : null
   )
   }
