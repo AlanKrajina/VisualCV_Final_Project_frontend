@@ -7,11 +7,9 @@ class Comment extends Component {
     const { comment, deleteComment } = this.props 
 
     return (
-      <div>
-        <li style={{marginTop: "20px", fontSize: "15px"}}>
-          {comment.attributes.text} 
-        </li>
-          <Button style={{marginTop: "10px"}} onClick={() => deleteComment(comment.id)}> Delete </Button>
+      <div style={{marginTop: "20px", fontSize: "13px"}}>
+          <p>{comment.attributes.text}</p> 
+          <Button style={{padding: "2px", fontSize: "11px"}} onClick={() => deleteComment(comment.id)}> Delete </Button>
       </div>
     );
   }

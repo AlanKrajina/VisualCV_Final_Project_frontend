@@ -24,11 +24,9 @@ class CommentsContainer extends Component {
   }
 }
 
-
 const mapDispatchToProps = dispatch => ({
-  addComment: (comment) => dispatch(createComment(comment)),  // umjesto ovog myBlogs action?
+  addComment: (comment) => dispatch(createComment(comment)),  
   deleteComment: id => dispatch(deleteComment(id))
-  //deleteComment: id => dispatch({type: 'DELETE_COMMENT', id})
 })
 
 const mapStateToProps = state => {
