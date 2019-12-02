@@ -12,6 +12,7 @@ const blogModal = props => {
     <div className={cssClasses.join(' ')}>
         {<h3>{props.blog.attributes.title}</h3>}
         {<p className="Education">{props.blog.attributes.content}</p>}
+        {<a href={props.blog.attributes.blog_link}>Blog link</a>} 
         <CommentsContainer blog={props.blog}/>
     </div>
   );

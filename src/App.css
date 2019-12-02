@@ -4,41 +4,8 @@ body {
   font-family: sans-serif;
 }
 
-.Button {
-  border: 1px solid #521751;
-  font: inherit;
-  padding: 8px;
-  background-color: #521751;
-  color: white;
-  cursor: pointer;
-}
-
-.Button:hover,
-.Button:active {
-  background-color: #fa923f;
-}
-
-
-
 .App {
   text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 #loggedin {
@@ -70,12 +37,11 @@ body {
 }
 
 .active {
-  color: green;
+  color: aqua
 }
 
 
 #background-video{
-
   width: 100vw;
   height: 100vh;
   position: absolute;
@@ -83,8 +49,7 @@ body {
   top: 0;
   z-index: -2;
   display: flex;
-
-  }
+}
 
 #sectionStyle{
   width: 100vw;
@@ -104,7 +69,6 @@ body {
   font: 1.2em cursive;
   padding-top: 10px;
   color: #61dafb;
-
 }
 
 #sectionStylePicard{
@@ -135,7 +99,6 @@ body {
   margin: 10px;
   background: linear-gradient(rgba(0, 14, 84, 0.5), rgba(52, 85, 234, 0.5));
   color: #44b0cd;
-
 }
 
 

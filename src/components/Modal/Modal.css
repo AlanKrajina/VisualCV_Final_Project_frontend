@@ -10,7 +10,6 @@
     top: 20%;
     left: 30%;
     width: 40%;
-    transition: all 0.3s ease-out;
     border-radius: 25px;
     color: aqua;
     font: 1.2em cursive;
@@ -65,21 +64,6 @@ top: 10%;
 .title{
     color: aqua;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .Modal .Certs {
     color: beige;

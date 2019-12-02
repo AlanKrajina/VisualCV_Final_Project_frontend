@@ -18,5 +18,4 @@ const projectModal = props => {
   );
 };
 
-
 export default projectModal;
