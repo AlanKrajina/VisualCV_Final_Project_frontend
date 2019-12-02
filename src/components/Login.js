@@ -10,9 +10,14 @@ const sectionStyle = {
   backgroundImage: `url(${picard})`,
   backgroundSize: 'cover',
   overflow: 'hidden',
-  height: '630px'
+  height: '635px',
+  top: "10%"
 };
 
+const cssClasses = [
+  "Modal",
+  "Modal2"
+];
 
 const Login = ({ loginFormData, updateLoginForm, login , history}) => {   // destructured username and password from "loginFormData" we made up
                                                                           // then they go to FORM as -> VALUE to fill in on input
@@ -29,8 +34,6 @@ const Login = ({ loginFormData, updateLoginForm, login , history}) => {   // des
         // then REDUCER - reducers/loginForm.js checks action.type "UPDATE_LOGIN_FORM" and returns ->action.formData<- that updates REDUX store
       }
 
-
-
     const handleSubmit = event => {
         event.preventDefault()
         login(loginFormData, history) //login from curentUser action
@@ -38,10 +41,8 @@ const Login = ({ loginFormData, updateLoginForm, login , history}) => {   // des
         // history passes object
     }
     
-
-
     return (
-      <div  className="Modal">
+      <div className={cssClasses.join(' ')}>
     <form  className="Modal2" onSubmit={handleSubmit}>
       <input style={{visibility: "hidden"}} placeholder="username" value={loginFormData.username} name="username" type="text" onChange={handleInputChange} />
       <input style={{visibility: "hidden"}} placeholder="password" value={loginFormData.password} name="password" type="text" onChange={handleInputChange} />
@@ -68,10 +69,6 @@ const Login = ({ loginFormData, updateLoginForm, login , history}) => {   // des
      </div>
     )
 }
-
-
-
-
 
 
 const mapStateToProps = state => { // taking state from REDUX thats ALREADY in the store

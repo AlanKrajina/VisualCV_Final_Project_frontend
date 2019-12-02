@@ -20,6 +20,7 @@
 
 .Modal2 {
 padding-bottom: 20px;
+top: 10%;
 }  
 
 .Contact {
@@ -32,6 +33,15 @@ padding-bottom: 20px;
     font-size: 15px;
     padding: 20px;
     line-height: 30px;
+}  
+
+.Exp {
+    color: beige;
+    font-size: 15px;
+    padding: 10px;
+    line-height: 22px;
+    top: 15%;
+
 }  
 
 .Education {
