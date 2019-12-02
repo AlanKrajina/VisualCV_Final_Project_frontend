@@ -15,7 +15,7 @@
     color: aqua;
     font: 1.2em cursive;
     transition: all 0.3s ease-out;
-
+    text-shadow: 2px 2px 4px #000000;
 }
 
 .Modal2 {
@@ -27,10 +27,49 @@ padding-bottom: 20px;
     left: 35%;
 }  
 
-.Modal .Education {
+.About {
     color: beige;
     font-size: 15px;
-    }  
+    padding: 20px;
+    line-height: 30px;
+}  
+
+.Education {
+    color: beige;
+    font-size: 15px;
+    padding: 10px;
+    line-height: 22px;
+    left: 14%;
+    top: 11%;
+}  
+
+.Education2 {
+    color: beige;
+    font-size: 15px;
+    padding: 10px;
+    line-height: 22px;
+    left: 14%;
+    width: 75%;
+    top: 11%;
+}  
+.title{
+    color: aqua;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .Modal .Certs {
     color: beige;
@@ -104,3 +143,5 @@ a:hover>div { display: block; }
     height: 40px;
     border-radius: 15px;
 }
+
+

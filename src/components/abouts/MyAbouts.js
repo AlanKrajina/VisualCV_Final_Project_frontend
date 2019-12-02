@@ -3,10 +3,14 @@ import { connect } from 'react-redux'
 import "../Modal/Modal.css"
 
 const MyProjects = ({ currentUser, loggedIn  }) => {
+  const cssClasses = [
+    "Modal",
+    "About"
+  ];
   return (
     loggedIn ?
-    <div className="Modal">
-   { <p className="Education"> {currentUser.attributes.abouts.map(element => element.content)}</p>}
+    <div className={cssClasses.join(' ')}>
+   { <p> {currentUser.attributes.abouts.map(element => element.content)}</p>}
     </div> : null
   )
   }

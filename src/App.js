@@ -73,7 +73,6 @@ class App extends Component {
             { loggedIn ? 
             <Route exact path='/blogs/:id' render={props => {
               const blog = blogs.attributes.blogs.find(element => element.id === props.match.params.id)
-              console.log(blog)
               return <BlogModal blog={blog} {...props}/>
             }}/> : null
             } 

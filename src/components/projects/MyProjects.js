@@ -11,7 +11,7 @@ const MyProjects = ({ currentUser, loggedIn }) => {
             <p>List of Projects:</p>
             {currentUser.attributes.projects.map(element => 
               <div key={element.id}>
-               <p key={element.id}><Link to={`/projects/${element.id}`}>{element.title}</Link></p>
+               <p><Link to={`/projects/${element.id}`}>{element.title}</Link></p>
             </div>
             )} </div> : null
       )
