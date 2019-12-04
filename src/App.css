@@ -40,7 +40,6 @@ body {
   color: aqua
 }
 
-
 #background-video{
   width: 100vw;
   height: 100vh;
@@ -87,7 +86,7 @@ body {
 .quote{
   color: #055b71;
   font: 15px cursive;
-
+  padding-top: 20px;
 }
 
 #weatherStyle {

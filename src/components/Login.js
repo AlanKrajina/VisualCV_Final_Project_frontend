@@ -54,12 +54,17 @@ const Login = ({ loginFormData, updateLoginForm, login , history}) => {   // des
         <h4>FACTS</h4>
         <div style={{color: "blue"}}>
           <p>Welcome to my portfolio project VisualCV.</p>
-          <p>Project completes two ideas, creation of my personal website + online CV and a fully completed Flatiron School final project.
+          <p>Project completes two ideas, one being my personal website + online CV and second a fully completed Flatiron School final project.
            VisualCV is build upon React/Redux for frontend and Rails for backend.</p>
-          <p>Two main parts of the project:</p>
-          <p>1. Utilization of Rails backend API + React/Redux GET and POST fetch requests to integrate Login option on press of a button (no credentials needed)</p>
-          <p>and the ability to add comments on a Blog post and sending them to database and receiving back on request. </p>
-          <p>2. Usage of an External API from a opensource website using only React (Weather Checker component)</p>
+          <p>Main parts of the project:</p>
+          <li>RESTful JSON API and Routing with Rails</li>
+          <li>External JSON OpenWeather API</li>
+          <li>Redux Thunk middleware for responding and modifying state change</li>
+          <li>Utilizes fetch() within actions to GET and POST data from API</li>
+          <li>Fast JSON:API serializer for Ruby Objects</li>
+          <li>ActiveRecord for Object-relational mapping in Rails</li>
+          <li>SQLite database</li>
+          <li>Build upon ES6 JS standards</li>
         </div>
         <p className="quote">“Things are only impossible until they are not.” ― Jean-Luc Picard</p>
         <a href="#null">Hover to Engage
