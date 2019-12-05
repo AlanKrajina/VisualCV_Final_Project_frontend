@@ -93,4 +93,4 @@ const mapStateToProps = state => {
   })
 }
 
-export default withRouter(connect (mapStateToProps, { getCurrentUser })(App));// from redux
+export default withRouter(connect (mapStateToProps, { getCurrentUser })(App));

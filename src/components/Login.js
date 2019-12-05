@@ -85,4 +85,3 @@ const mapStateToProps = state => { // taking state from REDUX thats ALREADY in t
   }
 
 export default connect(mapStateToProps, { updateLoginForm, login })(Login) // gets state from STORE plus ACTIONS - updateLoginForm (takes formData)
-                                                                                                      // instead mapDispatchToProps
