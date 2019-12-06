@@ -31,11 +31,9 @@ export const login = (credentials, history) => {
           if (response.error) { //error from sessions controller
             alert(response.error)
           } else {
-            dispatch(setCurrentUser(response.data)) // dispatch function
-            // setCurrentUser -> ACTION creator
+            dispatch(setCurrentUser(response.data)) // setCurrentUser -> ACTION creator sent to REDUCER
             dispatch(getMyComments())   
-            dispatch(resetLoginForm())               // clears on login (redux loginForm)
-            history.push('/')                        // receiving history object to return to initial url
+            dispatch(resetLoginForm())              
           }
         })
         .catch(console.log)
@@ -56,8 +54,7 @@ export const getCurrentUser = () => {
         .then(r => r.json())
         .then(response => {
             dispatch(setCurrentUser(response.data))
-            dispatch(getMyComments())   // u loginu?
-
+            dispatch(getMyComments())   
         })
         .catch(console.log)
     }

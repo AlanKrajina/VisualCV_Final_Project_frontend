@@ -11,7 +11,7 @@ const MyBlogs = ({ currentUser, loggedIn  }) => {
         <p>List of Blogs:</p>
         {currentUser.attributes.blogs.map( element => 
           <div key={element.id}>
-           <p key={element.id}><Link to={`/blogs/${element.id}`}>{element.attributes.title}</Link></p>
+           <p><Link to={`/blogs/${element.id}`}>{element.attributes.title}</Link></p>
         </div>
         )} </div> : <p>no blogs</p>
   )

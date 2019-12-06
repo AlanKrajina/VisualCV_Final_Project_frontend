@@ -47,13 +47,13 @@ const Login = ({ loginFormData, updateLoginForm, login , history}) => {   // des
       <input style={{visibility: "hidden"}} placeholder="username" value={loginFormData.username} name="username" type="text" onChange={handleInputChange} />
       <input style={{visibility: "hidden"}} placeholder="password" value={loginFormData.password} name="password" type="text" onChange={handleInputChange} />
       <Button variant="primary" type="submit">
-      Login to VisualCV
+      Quick Login
       </Button>
     </form>
       <div>
-        <h4>FACTS</h4>
+        <h4>VisualCV</h4>
         <div style={{color: "blue"}}>
-          <p>Welcome to my portfolio project VisualCV.</p>
+          <p>Welcome to my final Flatiron School project.</p>
           <p>Project completes two ideas, one being my personal website + online CV and second a fully completed Flatiron School final project.
            VisualCV is build upon React/Redux for frontend and Rails for backend.</p>
           <p>Main parts of the project:</p>

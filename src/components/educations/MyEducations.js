@@ -11,7 +11,7 @@ const MyProjects = ({ currentUser, loggedIn  }) => {
     loggedIn ?
     <div className={cssClasses.join(' ')}>
         {currentUser.attributes.educations.map(element => 
-          <div>
+          <div key={element.school}>
            <h4 className={"title"}>{element.school}</h4>
            <p>{element.location}</p>
            <p>{element.content}</p>
@@ -19,7 +19,7 @@ const MyProjects = ({ currentUser, loggedIn  }) => {
         )} 
         <p className={"title"}>Certifications:</p>
         {currentUser.attributes.educations.map(element => 
-          <div> 
+          <div key={element.certification_name}> 
            <h5 className={"title"}>{element.certification_name}</h5>
            <p>{element.certification_content}</p>
         </div>

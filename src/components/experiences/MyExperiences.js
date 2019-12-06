@@ -13,7 +13,7 @@ const MyProjects = ({ currentUser, loggedIn  }) => {
     <div className={cssClasses.join(' ')}>
 
         {currentUser.attributes.experiences.map(element => 
-          <div>
+          <div key={element.company}>
            <h4 className={"title"}>{element.company}</h4>
            <p>{element.position}</p>
            <p>{element.content}</p>
