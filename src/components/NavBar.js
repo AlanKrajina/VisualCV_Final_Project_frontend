@@ -1,9 +1,9 @@
 import React from 'react'
-import { connect } from 'react-redux'  // connect grabs curretUser with mapStateToProps
+import { connect } from 'react-redux'  
 import Logout from './Logout.js'
 import { NavLink } from 'react-router-dom'
 
-const NavBar = ({ currentUser, loggedIn }) => {
+const NavBar = () => {
   return (
     <div className="NavBar">
       <NavLink exact activeClassName="active" to="/projects">Projects</NavLink>

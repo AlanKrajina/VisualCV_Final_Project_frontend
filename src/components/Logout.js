@@ -4,12 +4,11 @@ import { logout } from "../actions/currentUser.js"
 import { withRouter } from 'react-router-dom'
 import { Form , Button } from 'react-bootstrap'
 
-
 const Logout = ({ logout, history }) => {
   return (
     <Form onSubmit={(event) => {
         event.preventDefault()
-        logout() // onSubmit this function dispatches action.type from actions "clearCurrentUser" to reducer "currentUser" and returns NULL
+        logout()
         history.push('/')
       }
     }>
@@ -21,6 +20,4 @@ const Logout = ({ logout, history }) => {
 }
 
 export default withRouter(connect(null, { logout } )(Logout))
-// { logout }  -> instead of dispatchToProps
-// imported action from "../actions/currentUser.js"
-// automatically dispatched and now we can use it
+

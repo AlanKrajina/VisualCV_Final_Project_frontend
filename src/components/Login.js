@@ -19,26 +19,20 @@ const cssClasses = [
   "Modal2"
 ];
 
-const Login = ({ loginFormData, updateLoginForm, login , history}) => {   // destructured username and password from "loginFormData" we made up
-                                                                          // then they go to FORM as -> VALUE to fill in on input
-                                                                    // updateLoginForm - action as argument
+const Login = ({ loginFormData, updateLoginForm, login , history}) => {
 
     const handleInputChange = event => {
-        const { name, value } = event.target // dinamically grabs name and value (onChange)
-        const updatedFormInfo = {            // NEW UPDATED DATA from form
-            ...loginFormData,   // destructures object and keeps properties in place (username + password)
-              [name]: value     // this takes them out ([name] -> form - name= username and password)
+        const { name, value } = event.target
+        const updatedFormInfo = {
+            ...loginFormData,
+              [name]: value
         }
-        updateLoginForm(updatedFormInfo) // UPDATES OBJECT - sends current state(updatedFormInfo=loginFormData) to update -> actions/loginForm.js
-        // actions/loginForm.js  -> returns action.formData object + action.type "UPDATE_LOGIN_FORM" for -----> REDUCER
-        // then REDUCER - reducers/loginForm.js checks action.type "UPDATE_LOGIN_FORM" and returns ->action.formData<- that updates REDUX store
+        updateLoginForm(updatedFormInfo) 
       }
 
     const handleSubmit = event => {
         event.preventDefault()
-        login(loginFormData, history) //login from curentUser action
-        // fetches form data and returns JSON
-        // history passes object
+        login(loginFormData, history)
     }
     
     return (
@@ -75,13 +69,10 @@ const Login = ({ loginFormData, updateLoginForm, login , history}) => {   // des
     )
 }
 
-
-const mapStateToProps = state => { // taking state from REDUX thats ALREADY in the store
+const mapStateToProps = state => {
     return {
-   //   username: state.loginForm.username,
-   //   password: state.loginForm.password
-   loginFormData: state.loginForm                  // login argument and form value
+   loginFormData: state.loginForm
 }
   }
 
-export default connect(mapStateToProps, { updateLoginForm, login })(Login) // gets state from STORE plus ACTIONS - updateLoginForm (takes formData)
+export default connect(mapStateToProps, { updateLoginForm, login })(Login)

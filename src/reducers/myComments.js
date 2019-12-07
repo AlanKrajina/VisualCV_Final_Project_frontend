@@ -15,7 +15,7 @@ export default (state = initialState, action) => {
                       blog: {
                         data: {
                           id: action.comment.relationships.blog.data.id
-                  }}}
+                }}}
             }
             return state.concat(comment)
 

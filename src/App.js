@@ -1,16 +1,14 @@
 import React, { Component } from 'react'
-import './App.css';
-import SampleVideo from './assets/SampleVideo';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Section from './assets/BgImage.js';
+import './App.css'
+import SampleVideo from './assets/SampleVideo'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import Section from './assets/BgImage.js'
 import { connect } from 'react-redux'
-import { getCurrentUser } from "./actions/currentUser.js" // user from API
-
+import { getCurrentUser } from "./actions/currentUser.js" 
+import { Route, Switch, withRouter } from 'react-router-dom'
 import NavBar from './components/NavBar.js'
 import Login from './components/Login.js'
 import Logout from './components/Logout.js'
-import { Route, Switch, withRouter } from 'react-router-dom' // installed and imported dependencies
-
 import MyProjects from './components/projects/MyProjects.js'
 import ProjectModal from './components/Modal/ProjectModal.js'
 import MyBlogs from './components/blogs/MyBlogs.js'
@@ -20,7 +18,6 @@ import MyEducations from './components/educations/MyEducations.js'
 import MyContacts from './components/contacts/MyContacts.js'
 import MyAbouts from './components/abouts/MyAbouts.js'
 import SearchableWeathersContainer from './components/SearchableWeathersContainer/SearchableWeathersContainer.js'
-
 
 class App extends Component {
   state = {
@@ -45,15 +42,15 @@ class App extends Component {
     return (
         <div>
         { loggedIn ? 
-        <div>
-        <NavBar/> 
-        <SearchableWeathersContainer/>        
-        <Section/>        
-        </div> : 
-        <div>
-        <Login/>
-        <SampleVideo/>
-        </div>
+          <div>
+            <NavBar/> 
+            <SearchableWeathersContainer/>        
+            <Section/>        
+          </div> : 
+          <div>
+            <Login/>
+            <SampleVideo/>
+          </div>
          }
         <Switch>
             <Route exact path='/login' component={Login}/> 
