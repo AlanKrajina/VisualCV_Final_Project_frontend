@@ -31,7 +31,7 @@ export const getMyComments = () => {
         },
       })
         .then(r => r.json())
-        .then(response => {   // response = {data: Array(2)}
+        .then(response => {   // response = array
           if (response.error) {
             alert(response.error)
           } else {
@@ -66,7 +66,6 @@ export const getMyComments = () => {
           }
         })
         .catch(console.log)
-  
     }
   } 
 

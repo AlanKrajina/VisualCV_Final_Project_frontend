@@ -12,10 +12,7 @@ const MyProjects = ({ currentUser, loggedIn  }) => {
     <div className={cssClasses.join(' ')}>
    { <p> {currentUser.attributes.abouts.map(element => element.content)}</p>}
     </div> : null
-  )
-  }
-
-
+  )}
 
 const mapStateToProps = ({ currentUser }) => {
   return {

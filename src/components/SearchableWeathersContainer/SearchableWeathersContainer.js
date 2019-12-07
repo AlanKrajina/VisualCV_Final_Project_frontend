@@ -21,7 +21,7 @@ class SearchableWeathersContainer extends Component {
   fetchWeather = (searchTerm) => {
     fetch(URL.concat(searchTerm).concat(APPID))
       .then(res => res.json())
-      .then(data => this.setState({ weathers: data })); // array of objects
+      .then(data => this.setState({ weathers: data })); 
   }
 
   render() {
@@ -43,9 +43,6 @@ class SearchableWeathersContainer extends Component {
         </Form>
         <Weather weathers={this.state.weathers} />  
       </div>
-      // onChange sets State to input value
-      // submit fires onSubmit(handleSubmit) and Fetches data using onChange new state
-      // return() uses Weather component to show data with new state
       )
     }
 }

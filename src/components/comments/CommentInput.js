@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Form , Button } from 'react-bootstrap'
 
 class CommentInput extends Component {
-
   state ={
     text:''
   }
@@ -15,7 +14,7 @@ class CommentInput extends Component {
 
   handleOnSubmit(event) {
     event.preventDefault();
-    this.props.addComment({  // dispatches action to reducer
+    this.props.addComment({  
       text: this.state.text,
       blogId: this.props.blogId
     });

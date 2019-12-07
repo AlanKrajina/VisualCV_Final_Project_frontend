@@ -11,7 +11,6 @@ const MyProjects = ({ currentUser, loggedIn  }) => {
   return (
     loggedIn ?
     <div className={cssClasses.join(' ')}>
-
         {currentUser.attributes.experiences.map(element => 
           <div key={element.company}>
            <h4 className={"title"}>{element.company}</h4>
@@ -19,9 +18,7 @@ const MyProjects = ({ currentUser, loggedIn  }) => {
            <p>{element.content}</p>
         </div>
         )} </div> : null
-  )
-  }
-
+  )}
 
 const mapStateToProps = ({ currentUser }) => {
   return {

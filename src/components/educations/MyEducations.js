@@ -7,6 +7,7 @@ const MyProjects = ({ currentUser, loggedIn  }) => {
     "Modal",
     "Education2"
   ];
+
   return (
     loggedIn ?
     <div className={cssClasses.join(' ')}>
@@ -24,8 +25,7 @@ const MyProjects = ({ currentUser, loggedIn  }) => {
            <p>{element.certification_content}</p>
         </div>
         )} </div> : null  
-  )
-}
+  )}
 
 const mapStateToProps = ({ currentUser }) => {
   return {

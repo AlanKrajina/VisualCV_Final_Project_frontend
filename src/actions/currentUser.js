@@ -3,10 +3,10 @@ import { getMyComments } from "./myComments.js"
 
 // synchronous action creators
 
-export const setCurrentUser = user => {   // receives user object
+export const setCurrentUser = user => {  
     return {
       type: "SET_CURRENT_USER",
-      user                                // returns plain JS object
+      user                  
     }
   }
 
@@ -14,24 +14,21 @@ export const setCurrentUser = user => {   // receives user object
 // asynchronous action creators
 
 export const login = (credentials, history) => {     
-/*{username: "Alan", password: "password"} */
-                                                     // returns FUNCTION that returns FETCH with dispatch from redux
     return dispatch => {                    
-        return fetch("http://localhost:3001/api/v1/login", {       // login Routes.rb rails + sessions controller (def create) 
-                                                                   //       post "/api/v1/login", to: "api/v1/sessions#create"
-          credentials: "include", //added from rails
-          method: "POST",         // sending data
+        return fetch("http://localhost:3001/api/v1/login", {
+          credentials: "include",
+          method: "POST",
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify(credentials) // {username: "Alan", password: "password"} - loginamo i saljemo credentials
-        })                                  // moramo imat jer je POST
+          body: JSON.stringify(credentials)
+        })                               
         .then(r => r.json())
         .then(response => {
-          if (response.error) { //error from sessions controller
+          if (response.error) { 
             alert(response.error)
           } else {
-            dispatch(setCurrentUser(response.data)) // setCurrentUser -> ACTION creator sent to REDUCER
+            dispatch(setCurrentUser(response.data)) 
             dispatch(getMyComments())   
             dispatch(resetLoginForm())              
           }
@@ -40,11 +37,9 @@ export const login = (credentials, history) => {
     }
   }
 
-
 export const getCurrentUser = () => {
     return dispatch => {
       return fetch("http://localhost:3001/api/v1/get_current_user", {
-          // fetching current user
         credentials: "include",
         method: "GET",
         headers: {
@@ -62,7 +57,7 @@ export const getCurrentUser = () => {
 
 // LOGOUT
 
-  export const clearCurrentUser = () => { // created action.type
+  export const clearCurrentUser = () => {
     return {
       type: "CLEAR_CURRENT_USER"
     }
@@ -70,10 +65,8 @@ export const getCurrentUser = () => {
 
   export const logout = () => {
     return dispatch => {
-      dispatch(clearCurrentUser())  // dispatched action.type to return NULL from reducer   (above)
-   //   dispatch(clearTrips())
-
-      return fetch('http://localhost:3001/api/v1/logout', {   //  delete "/api/v1/logout", to: "api/v1/sessions#destroy"
+      dispatch(clearCurrentUser())
+      return fetch('http://localhost:3001/api/v1/logout', {  
         credentials: "include",
         method: "DELETE"
       })

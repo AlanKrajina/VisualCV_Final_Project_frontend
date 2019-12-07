@@ -19,7 +19,5 @@ const Weather = ({ weathers }) => {
 Weather.defaultProps = {
     weathers: []
   };
-// defaultProps object to the component; when React renders the component, 
-// the default props will be used unless the parent overrides them    <p>{ weathers.main.temp}</p>
 
 export default Weather;
