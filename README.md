@@ -1,6 +1,7 @@
 # VisualCV
 
-VisualCV is a Full Stack web application created using Rails backend and React/Redux frontend. 
+VisualCV is a Full Stack web application created using Rails backend and React/Redux frontend.
+
 It is a single page application that utilizes Create, Read and Delete functions of persistent storage. 
 App uses RESTful architectural style with the implementation of the client and server done independently, meaning that the code on the client side can be changed at any time without affecting the operation of the server, and the code on the server side can be changed without affecting the operation of the client. 
 Utilizes GET and POST fetch requests to get and submit data to the database, Thunk middleware for async logic that interacts with the store and in addition uses EXTERNAL and INTERNAL APIs. 
