@@ -1,4 +1,3 @@
-import { resetLoginForm } from "./loginForm.js"
 import { getMyComments } from "./myComments.js"
 
 // synchronous action creators
@@ -13,7 +12,7 @@ export const setCurrentUser = user => {
 
 // asynchronous action creators
 
-export const login = (credentials, history) => {     
+export const login = (credentials) => {     
     return dispatch => {                    
         return fetch("http://localhost:3001/api/v1/login", {
           credentials: "include",
@@ -30,7 +29,6 @@ export const login = (credentials, history) => {
           } else {
             dispatch(setCurrentUser(response.data)) 
             dispatch(getMyComments())   
-            dispatch(resetLoginForm())              
           }
         })
         .catch(console.log)
@@ -49,7 +47,6 @@ export const getCurrentUser = () => {
         .then(r => r.json())
         .then(response => {
             dispatch(setCurrentUser(response.data))
-            dispatch(getMyComments())   
         })
         .catch(console.log)
     }
