@@ -1,17 +1,14 @@
-import React, { Component } from 'react';
 import { Button } from 'react-bootstrap'
+import React from 'react'
 
-class Comment extends Component {
+const Comment = (props) => {
 
-  render() {
-    const { comment, deleteComment } = this.props 
-    return (
-      <div style={{marginTop: "20px", fontSize: "13px"}}>
-          <p>{comment.attributes.text}</p> 
-          <Button style={{padding: "2px", fontSize: "11px"}} onClick={() => deleteComment(comment.id)}> Delete </Button>
-      </div>
-    );
-  }
-};
+  return (
+    <div style={{marginTop: "20px", fontSize: "13px"}}>
+        <p>{props.comment.attributes.text}</p> 
+        <Button style={{padding: "2px", fontSize: "11px"}} onClick={() => props.deleteComment(props.comment.id)}> Delete </Button>
+    </div>
+  );
+}
 
 export default Comment;
