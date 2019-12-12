@@ -24,6 +24,10 @@ class SearchableWeathersContainer extends Component {
       .then(data => this.setState({ weathers: data })); 
   }
 
+  toggle = () => {
+    this.setState({ weathers: [] })
+  }
+
   render() {
       return (
         <div id="sectionStyle2">
@@ -40,6 +44,7 @@ class SearchableWeathersContainer extends Component {
           <Button style={{marginLeft: "7%"}} variant="primary" type="submit">
             Submit
           </Button>
+          <Button style={{padding: "2px", fontSize: "11px", marginLeft: "5px"}} onClick={this.toggle}>Close </Button>
         </Form>
         <Weather weathers={this.state.weathers} />  
       </div>
