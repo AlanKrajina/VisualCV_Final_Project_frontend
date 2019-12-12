@@ -38,7 +38,7 @@ export const getMyComments = () => {
         },
       })
         .then(r => r.json())
-        .then(response => {   // response = array
+        .then(response => {   
           if (response.error) {
             alert(response.error)
           } else {
@@ -49,7 +49,7 @@ export const getMyComments = () => {
     }
   }
   
-  export const createComment = (commentData, history) => {
+  export const createComment = (commentData) => {
     return dispatch => {
       const sendableCommentData = {
         text: commentData.text,
@@ -69,7 +69,6 @@ export const getMyComments = () => {
             alert(resp.error)
           } else {
             dispatch(addComment(resp.data))
-           //  history.push(`/comments/${resp.data.id}`)
           }
         })
         .catch(console.log)
