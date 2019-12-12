@@ -21,6 +21,9 @@ export default (state = initialState, action) => {
 
             case 'DELETE_COMMENTS':
               return state.filter(comment => comment.id === action.commentId ? false : true)
+            
+            case "CLEAR_COMMENTS":
+              return initialState 
     default:
         return state
     }

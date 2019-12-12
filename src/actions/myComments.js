@@ -19,7 +19,14 @@ export const setMyComments = comments => {
       commentId
     }
   }
-  
+
+  export const clearComments = () => {
+    return {
+      type: "CLEAR_COMMENTS"
+    }
+  }  
+
+
  // async actions
 export const getMyComments = () => {
     return dispatch => {

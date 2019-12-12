@@ -1,4 +1,5 @@
 import { getMyComments } from "./myComments.js"
+import { clearComments } from "./myComments.js"
 
 // synchronous action creators
 
@@ -47,6 +48,7 @@ export const getCurrentUser = () => {
         .then(r => r.json())
         .then(response => {
             dispatch(setCurrentUser(response.data))
+            dispatch(getMyComments())   
         })
         .catch(console.log)
     }
@@ -63,6 +65,7 @@ export const getCurrentUser = () => {
   export const logout = () => {
     return dispatch => {
       dispatch(clearCurrentUser())
+      dispatch(clearComments())   
       return fetch('http://localhost:3001/api/v1/logout', {  
         credentials: "include",
         method: "DELETE"
