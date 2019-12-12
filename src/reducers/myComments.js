@@ -24,8 +24,8 @@ export default (state = initialState, action) => {
             
             case "CLEAR_COMMENTS":
               return initialState 
-    default:
-        return state
+            default:
+                return state
     }
   }
 

@@ -69,7 +69,7 @@ export const getMyComments = () => {
             alert(resp.error)
           } else {
             dispatch(addComment(resp.data))
-            history.push(`/comments/${resp.data.id}`)
+           //  history.push(`/comments/${resp.data.id}`)
           }
         })
         .catch(console.log)
