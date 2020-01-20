@@ -20,7 +20,10 @@ export const login = (credentials) => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "https://visualcv.herokuapp.com"
+            "Access-Control-Allow-Origin": "https://visualcv.herokuapp.com",
+            "Access-Control-Allow-Methods": GET, POST, PUT, OPTIONS,
+            "Access-Control-Allow-Credentials": true,
+            "Access-Control-Allow-Headers": origin
           },
           body: JSON.stringify(credentials)
         })                               
@@ -44,7 +47,10 @@ export const getCurrentUser = () => {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "https://visualcv.herokuapp.com"
+          "Access-Control-Allow-Origin": "https://visualcv.herokuapp.com",
+          "Access-Control-Allow-Methods": GET, POST, PUT, OPTIONS,
+          "Access-Control-Allow-Credentials": true,
+          "Access-Control-Allow-Headers": origin
         },
       })
         .then(r => r.json())
