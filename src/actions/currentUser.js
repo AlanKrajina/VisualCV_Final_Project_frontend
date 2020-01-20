@@ -20,7 +20,7 @@ export const login = (credentials) => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            'Accepts': 'application/json'
+            "Access-Control-Allow-Credentials": "true"
           },
           body: JSON.stringify(credentials)
         })                               
@@ -40,11 +40,11 @@ export const login = (credentials) => {
 export const getCurrentUser = () => {
     return dispatch => {
       return fetch("https://visualcv.herokuapp.com/api/v1/get_current_user", {
-       // credentials: "include",
+        credentials: "include",
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          'Accepts': 'application/json'
+          "Access-Control-Allow-Credentials": "true"
         },
       })
         .then(r => r.json())
