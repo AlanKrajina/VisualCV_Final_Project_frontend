@@ -77,7 +77,7 @@ export const getMyComments = () => {
 
   export const deleteComment = (commentId, history) => {
     return dispatch => {
-      return fetch(`http://localhost:3001/api/v1/comments/${commentId}`, {
+      return fetch(`https://visualcv.herokuapp.com/api/v1/comments/${commentId}`, {
         credentials: "include",
         method: "DELETE",
         headers: {
