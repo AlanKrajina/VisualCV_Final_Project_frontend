@@ -12,13 +12,14 @@ export const setCurrentUser = user => {
 
 
 // asynchronous action creators
+var proxyUrl = 'https://cors-anywhere.herokuapp.com/'
+var targetUrl = 'https://visualcv.herokuapp.com/api/v1/login'
 
 export const login = (credentials) => {     
     return dispatch => {                    
-        return fetch("https://visualcv.herokuapp.com/api/v1/login", {
+        return fetch(proxyUrl + targetUrl, {
           credentials: "include",
           method: "POST",
-          mode: 'no-cors',
           headers: {
             "Content-Type": "application/json"
           },
@@ -36,13 +37,13 @@ export const login = (credentials) => {
         .catch(console.log)
     }
   }
+  var targetUrl2 = 'https://visualcv.herokuapp.com/api/v1/get_current_user'
 
 export const getCurrentUser = () => {
     return dispatch => {
-      return fetch("https://visualcv.herokuapp.com/api/v1/get_current_user", {
+      return fetch(proxyUrl + targetUrl2, {
         credentials: "include",
         method: "GET",
-        mode: 'no-cors',
         headers: {
           "Content-Type": "application/json"
         },
