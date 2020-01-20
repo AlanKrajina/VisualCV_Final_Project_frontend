@@ -30,7 +30,7 @@ export const setMyComments = comments => {
  // async actions
 export const getMyComments = () => {
     return dispatch => {
-      return fetch("http://localhost:3001/api/v1/comments", {
+      return fetch("https://visualcv.herokuapp.com/api/v1/comments", {
         credentials: "include",
         method: "GET",
         headers: {
@@ -55,7 +55,7 @@ export const getMyComments = () => {
         text: commentData.text,
         blog_id: commentData.blogId
       }
-      return fetch("http://localhost:3001/api/v1/comments", {
+      return fetch("https://visualcv.herokuapp.com/api/v1/comments", {
         credentials: "include",
         method: "POST",
         headers: {
