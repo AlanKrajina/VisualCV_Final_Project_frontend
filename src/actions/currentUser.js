@@ -15,6 +15,9 @@ export const setCurrentUser = user => {
 
 export const login = (credentials) => {     
     return dispatch => {                    
+      var auth_params = {auth:
+        credentials
+    }
         return fetch("https://visualcv.herokuapp.com/api/v1/login", {
           credentials: "include",
           method: "POST",
@@ -22,7 +25,7 @@ export const login = (credentials) => {
             "Content-Type": "application/json",
             "Access-Control-Allow-Origin": "https://visualcvreact.herokuapp.com"
           },
-          body: JSON.stringify(credentials)
+          body: JSON.stringify(auth_params)
         })                               
         .then(r => r.json())
         .then(response => {
