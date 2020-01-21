@@ -19,9 +19,8 @@ export const login = (credentials) => {
           credentials: "include",
           method: "POST",
           headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "https://stashapp.herokuapp.com"
-          },
+            "Content-Type": "application/json"
+                    },
           body: JSON.stringify(credentials)
         })                               
         .then(r => r.json())
