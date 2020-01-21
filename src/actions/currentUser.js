@@ -20,6 +20,7 @@ export const login = (credentials) => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "https://visualcvreact.herokuapp.com"
           },
           body: JSON.stringify(credentials)
         })                               
@@ -43,6 +44,7 @@ export const getCurrentUser = () => {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "https://visualcvreact.herokuapp.com"
         },
       })
         .then(r => r.json())
