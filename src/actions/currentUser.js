@@ -23,7 +23,7 @@ export const login = (credentials) => {
             "Content-Type": "application/json",
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Headers": "*",
-            'Access-Control-Allow-Credentials': "true"
+            'Access-Control-Allow-Credentials': true
           },
           body: JSON.stringify(credentials)
         })                               
@@ -50,7 +50,7 @@ export const getCurrentUser = () => {
           "Content-Type": "application/json",
           "Access-Control-Allow-Origin": "*",
           'Access-Control-Allow-Headers': "*",
-          'Access-Control-Allow-Credentials': "true"
+          'Access-Control-Allow-Credentials': true
         },
       })
         .then(r => r.json())
