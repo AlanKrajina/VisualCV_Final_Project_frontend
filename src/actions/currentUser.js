@@ -23,7 +23,7 @@ export const login = (credentials) => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "https://visualcv.herokuapp.com"
+            "Access-Control-Allow-Origin": "https://visualcvreact.herokuapp.com/"
           },
           body: JSON.stringify(auth_params)
         })                               
