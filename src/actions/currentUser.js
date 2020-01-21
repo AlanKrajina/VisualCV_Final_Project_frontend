@@ -20,7 +20,7 @@ export const login = (credentials) => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Headers": "*",
+            "Access-Control-Allow-Origin": "*",
           },
           body: JSON.stringify(credentials)
         })                               
@@ -44,7 +44,7 @@ export const getCurrentUser = () => {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          "Access-Control-Allow-Headers": "*",
+          "Access-Control-Allow-Origin": "*",
         },
       })
         .then(r => r.json())
