@@ -15,17 +15,13 @@ export const setCurrentUser = user => {
 
 export const login = (credentials) => {     
     return dispatch => {                    
-      var auth_params = {auth:
-        credentials
-    }
-        return fetch("http://localhost:3001/api/v1/login", {
+        return fetch("http://localhost:3000/api/v1/login", {
           credentials: "include",
           method: "POST",
           headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "https://visualcvreact.herokuapp.com/"
+            "Content-Type": "application/json"
           },
-          body: JSON.stringify(auth_params)
+          body: JSON.stringify(credentials)
         })                               
         .then(r => r.json())
         .then(response => {
@@ -42,12 +38,11 @@ export const login = (credentials) => {
 
 export const getCurrentUser = () => {
     return dispatch => {
-      return fetch("http://localhost:3001/api/v1/get_current_user", {
+      return fetch("http://localhost:3000/api/v1/get_current_user", {
         credentials: "include",
         method: "GET",
         headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "https://visualcvreact.herokuapp.com/"
+          "Content-Type": "application/json"
         },
       })
         .then(r => r.json())
