@@ -18,7 +18,7 @@ export const login = (credentials) => {
         return fetch("https://visualcv.herokuapp.com/api/v1/login", {
           credentials: "include",
           method: "POST",
-          mode: 'no-cors',
+          mode: 'cors',
           headers: {
             "Content-Type": "application/json",
             "Access-Control-Allow-Origin": "*",
@@ -45,7 +45,7 @@ export const getCurrentUser = () => {
       return fetch("https://visualcv.herokuapp.com/api/v1/get_current_user", {
         credentials: "include",
         method: "GET",
-        mode: 'no-cors',
+        mode: 'cors',
         headers: {
           "Content-Type": "application/json",
           "Access-Control-Allow-Origin": "*",
