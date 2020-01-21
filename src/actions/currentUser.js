@@ -16,7 +16,7 @@ export const setCurrentUser = user => {
 export const login = (credentials) => {     
     return dispatch => {                    
         return fetch("https://visualcv.herokuapp.com/api/v1/login", {
-     //     credentials: "include",
+          credentials: "true",
           method: "POST",
           mode: 'cors',
           headers: {
@@ -43,7 +43,7 @@ export const login = (credentials) => {
 export const getCurrentUser = () => {
     return dispatch => {
       return fetch("https://visualcv.herokuapp.com/api/v1/get_current_user", {
-     //   credentials: "include",
+        credentials: "true",
         method: "GET",
         mode: 'cors',
         headers: {
