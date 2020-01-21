@@ -44,7 +44,7 @@ export const getCurrentUser = () => {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "https://visualcvreact.herokuapp.com"
+          "Access-Control-Allow-Origin": "https://visualcv.herokuapp.com"
         },
       })
         .then(r => r.json())
