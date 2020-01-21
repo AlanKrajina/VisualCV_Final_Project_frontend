@@ -16,14 +16,14 @@ export const setCurrentUser = user => {
 export const login = (credentials) => {     
     return dispatch => {                    
         return fetch("https://visualcv.herokuapp.com/api/v1/login", {
-          credentials: "include",
+     //     credentials: "include",
           method: "POST",
           mode: 'cors',
           headers: {
             "Content-Type": "application/json",
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Headers": "*",
-            'Access-Control-Allow-Credentials': true
+            'Access-Control-Allow-Credentials': "true"
           },
           body: JSON.stringify(credentials)
         })                               
@@ -43,14 +43,14 @@ export const login = (credentials) => {
 export const getCurrentUser = () => {
     return dispatch => {
       return fetch("https://visualcv.herokuapp.com/api/v1/get_current_user", {
-        credentials: "include",
+     //   credentials: "include",
         method: "GET",
         mode: 'cors',
         headers: {
           "Content-Type": "application/json",
           "Access-Control-Allow-Origin": "*",
           'Access-Control-Allow-Headers': "*",
-          'Access-Control-Allow-Credentials': true
+          'Access-Control-Allow-Credentials': "true"
         },
       })
         .then(r => r.json())
