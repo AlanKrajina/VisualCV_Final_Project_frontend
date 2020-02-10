@@ -27,7 +27,7 @@ Ruby is scalable and projects with large code are easily maintainable. Its sinta
 But coding language woudnt fulfil its full potential without a backend framework like Rails that helps developers to build websites and applications, because it abstracts and simplifies common repetitive tasks. A developer using Ruby on Rails can basically create a full stack web application using only Rails. And in additions with a library like ActiveRecord we can work with databases like sqlite3 and postgeSQL.
 
 
-The second and the coolest part of the App is Javascript frontend library React that was build by Facebook developers and is taking the developer world by storm, surpassing Angular and Vue by far. It gives a developer an option tu create a single page application without refreshing a page offering a much faster experience for users when browsing through the page.
+The second and the coolest part of the App is Javascript frontend library React that was build by Facebook developers and is taking the developer world by storm, surpassing Angular and Vue by far. It gives a developer an option to create a single page application without refreshing a page offering a much faster experience for users when browsing through the page.
 
 
 React makes developers life much easier because it combines all parts of a website in its own individual components that have only one task. 
